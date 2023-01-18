@@ -1,23 +1,25 @@
 export default {
   meta: {
     // title: 'Project title',
-    name: 'Project name',
-    author: 'Novanet Studio <info@novanet.studio>',
-    description: 'Project description',
-    theme_color: '#fff',
-    lang: 'es',
+    name: "Grupo VPAS - Sitio web",
+    author: "Novanet Studio <info@novanet.studio>",
+    description:
+      "Somos una empresa especializada en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas.",
+    theme_color: "#fff",
+    lang: "es",
   },
   manifest: {
-    name: 'Project name',
-    short_name: 'Project short_name',
-    description: 'Project description',
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#fff',
+    name: "Grupo VPAS - Sitio web",
+    short_name: "Grupo VPAS web app",
+    description:
+      "Somos una empresa especializada en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas.",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#ffffff",
+    theme_color: "#fff",
   },
-  icon: { source: 'static/favicon.png' },
-  workbox: {
+  icon: { source: "assets/images/favicon.png" },
+  /*  workbox: {
     enabled: false,
-  },
+  }, */
 };
