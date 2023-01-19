@@ -28,6 +28,13 @@ export default defineConfig({
         battleship: "#767676",
         platinum: "#E5E5E5",
       },
+      backgroundColor: {
+        body: "#d6d6d6"
+      },
+      backgroundImage: {
+        footerBg: "url('./assets/images/vpas-fondo-marino.webp')",
+        footerShape: "url('./assets/images/vpas-footer-forma.svg')"
+      },
     },
   },
 });

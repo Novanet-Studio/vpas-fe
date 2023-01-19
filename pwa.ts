@@ -1,7 +1,7 @@
 export default {
   meta: {
-    // title: 'Project title',
-    name: "Grupo VPAS - Sitio web",
+    title: 'Grupo VPAS - Sitio web',
+    name: "Grupo VPAS web",
     author: "Novanet Studio <info@novanet.studio>",
     description:
       "Somos una empresa especializada en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas.",
@@ -19,7 +19,7 @@ export default {
     theme_color: "#fff",
   },
   icon: { source: "assets/images/favicon.png" },
-  /*  workbox: {
+   workbox: {
     enabled: false,
-  }, */
+  },
 };
