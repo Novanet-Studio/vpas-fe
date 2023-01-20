@@ -14,6 +14,7 @@ export default defineConfig({
         sans: ["Inter", "sans-serif"],
       },
       colors: {
+        silver: "#767676",
         gunmetal: "#1C2A35",
         bdazzled: "#39556E",
         cerulean: "#789BBA",
