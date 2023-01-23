@@ -20,7 +20,6 @@
   <section class="mensaje">
     <app-separator altClass="app__separator-top" />
     <div v-html="mensaje" class="mensaje__text"></div>
-    <app-separator altClass="app__separator-bottom" />
     <ul class="mensaje__iconos">
       <li
         v-for="(icono, index) in iconos"
@@ -46,6 +45,23 @@
       </li>
     </ul>
   </section>
+
+  <section class="noticias">
+    <app-separator altClass="app__separator-bottom" />
+    <h2 class="noticias__titulo">Noticias</h2>
+    <ul class="noticias__lista">
+      <li class="noticias__item" v-for="(item, index) in noticias">
+        <div class="noticias__item-container">
+          <nuxt-img
+            class="noticias__imagen"
+            :src="item.image"
+            :alt="item.alternativeText"
+          />
+          <h3 class="noticias__item-titulo">{{ item.title }}</h3>
+        </div>
+      </li>
+    </ul>
+  </section>
 </template>
 
 <script lang="ts" setup>
@@ -62,35 +78,35 @@ useHead({
 
 const slides = [
   {
-    image: "/slides/vpas-fondo-mar-y-peces.webp",
-    text: "<strong>Nos especializamos</strong> en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas.",
-    alternativeText: "Peces en aguas superficiales del océano",
+    image: '/slides/vpas-fondo-mar-y-peces.webp',
+    text: '<strong>Nos especializamos</strong> en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas.',
+    alternativeText: 'Peces en aguas superficiales del océano',
   },
   {
-    image: "/slides/vpas-mar-y- peces.webp",
-    text: "Nos hemos dedicado a <strong>crecer</strong> de forma integral, para proveer los mercados nacionales e internacionales con productos de calidad",
-    alternativeText: "Mar de aguas claras con peces en arrecife",
+    image: '/slides/vpas-mar-y- peces.webp',
+    text: 'Nos hemos dedicado a <strong>crecer</strong> de forma integral, para proveer los mercados nacionales e internacionales con productos de calidad',
+    alternativeText: 'Mar de aguas claras con peces en arrecife',
   },
 ];
 
 const especies = [
   {
-    image: "/vpas-especie-de-mar-pargo.webp",
-    title: "Especies de mar",
-    alternativetitle: "Pargo rojo",
-    link: "/productos/especies-de-mar",
+    image: '/vpas-especie-de-mar-pargo.webp',
+    title: 'Especies de mar',
+    alternativetitle: 'Pargo rojo',
+    link: '/productos/especies-de-mar',
   },
   {
-    image: "/vpas-especie-de-agua-dulce-cachama.webp",
-    title: "Especies de agua dulce",
-    alternativeText: "Cachama",
-    link: "/productos/especies-de-agua-dulce",
+    image: '/vpas-especie-de-agua-dulce-cachama.webp',
+    title: 'Especies de agua dulce',
+    alternativeText: 'Cachama',
+    link: '/productos/especies-de-agua-dulce',
   },
   {
-    image: "/vpas-marisco-langosta.webp",
-    title: "Mariscos",
-    alternativeText: "Langosta",
-    link: "/productos/mariscos",
+    image: '/vpas-marisco-langosta.webp',
+    title: 'Mariscos',
+    alternativeText: 'Langosta',
+    link: '/productos/mariscos',
   },
 ];
 
@@ -98,55 +114,55 @@ const mensaje = `Proveemos los mercados <span class="mensaje__span">nacionales e
 
 const iconos = [
   {
-    name: "Icono Pargo",
-    image: "/vpas-icono-pargo.webp",
+    name: 'Icono Pargo',
+    image: '/vpas-icono-pargo.webp',
   },
   {
-    name: "Icono Cachama",
-    image: "/vpas-icono-cachama.webp",
+    name: 'Icono Cachama',
+    image: '/vpas-icono-cachama.webp',
   },
   {
-    name: "Icono Langosta",
-    image: "/vpas-icono-langosta.webp",
+    name: 'Icono Langosta',
+    image: '/vpas-icono-langosta.webp',
   },
 ];
 
 const empresa = [
   {
-    titulo: "¿Quiénes somos?",
+    titulo: '¿Quiénes somos?',
     descripcion:
-      "Una empresa del sector alimentos que se especializa en el procesamiento y comercia-lización de pescados, mariscos, moluscosy demás especies marinas.",
+      'Una empresa del sector alimentos que se especializa en el procesamiento y comercia-lización de pescados, mariscos, moluscosy demás especies marinas.',
   },
   {
-    titulo: "Misión",
+    titulo: 'Misión',
     descripcion:
-      "Convertirnos en la empresa venezolana por excelencia en el procesamiento, comercialización y exportación de recursos hidrobiológicos.",
+      'Convertirnos en la empresa venezolana por excelencia en el procesamiento, comercialización y exportación de recursos hidrobiológicos.',
   },
   {
-    titulo: "Visión",
+    titulo: 'Visión',
     descripcion:
-      "Proveer a nuestros clientes nacionales e internacionales productos de calidad. Participar de manera sostenida y creciente en el desarrollo de la industria alimentaria.",
+      'Proveer a nuestros clientes nacionales e internacionales productos de calidad. Participar de manera sostenida y creciente en el desarrollo de la industria alimentaria.',
   },
 ];
 
 const noticias = [
   {
-    image: "/noticias/vpas-noticia-1.webp",
-    title: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur",
-    alternativetitle: "Pargo rojo",
-   
+    image: '/noticias/vpas-noticia-1.webp',
+    title:
+      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur',
+    alternativetitle: 'Pargo rojo',
   },
   {
-    image: "/noticias/vpas-noticia-2.webp",
-    title: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque",
-    alternativeText: "Cachama",
-   
+    image: '/noticias/vpas-noticia-2.webp',
+    title:
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque',
+    alternativeText: 'Cachama',
   },
   {
-    image: "/noticias/vpas-noticia-3.webp",
-    title: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihi",
-    alternativeText: "Langosta",
-    
+    image: '/noticias/vpas-noticia-3.webp',
+    title:
+      'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihi',
+    alternativeText: 'Langosta',
   },
 ];
 </script>
