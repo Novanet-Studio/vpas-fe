@@ -128,4 +128,25 @@ const empresa = [
       "Proveer a nuestros clientes nacionales e internacionales productos de calidad. Participar de manera sostenida y creciente en el desarrollo de la industria alimentaria.",
   },
 ];
+
+const noticias = [
+  {
+    image: "/noticias/vpas-noticia-1.webp",
+    title: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur",
+    alternativetitle: "Pargo rojo",
+   
+  },
+  {
+    image: "/noticias/vpas-noticia-2.webp",
+    title: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque",
+    alternativeText: "Cachama",
+   
+  },
+  {
+    image: "/noticias/vpas-noticia-3.webp",
+    title: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihi",
+    alternativeText: "Langosta",
+    
+  },
+];
 </script>
