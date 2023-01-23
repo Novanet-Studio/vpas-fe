@@ -62,6 +62,49 @@
       </li>
     </ul>
   </section>
+
+  <section class="contacto">
+    <h2 class="contacto__titulo">Contáctanos</h2>
+    <div class="contacto__contenedor">
+      <div class="contacto__informacion">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore ullam
+          est veritatis culpa, architecto, totam quisquam quibusdam consequuntur
+          hic saepe sed quam fugit suscipit facere quaerat temporibus inventore,
+          eaque officia.
+        </p>
+        <div class="contacto__informacion-contenedor">
+          <div class="contacto__texto">
+            <div class="contacto__texto-contenedor">
+              <font-awesome-icon
+                class="contacto__icono"
+                :icon="['fa', 'phone']"
+                size="lg"
+              />
+            </div>
+            <p>+58 212 265 34 35</p>
+          </div>
+          <div class="contacto__texto">
+            <div class="contacto__texto-contenedor">
+              <font-awesome-icon
+                class="contacto__icono"
+                :icon="['fa', 'envelope']"
+                size="lg"
+              />
+            </div>
+            <p>info@vpasgroup.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="contacto__mapa">
+        <nuxt-img
+          class="contacto__mapa-imagen"
+          src="/vpas-mapa-venezuela.svg"
+          alt="Mapa de venezuela"
+        />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts" setup>

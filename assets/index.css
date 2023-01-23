@@ -419,3 +419,43 @@
 .noticias__item-titulo {
   @apply heading-5 text-left text-bdazzled !border-b-2 border-gray-400 pt-6 pb-4;
 }
+
+.contacto {
+  @apply px-16;
+}
+
+.contacto__titulo {
+  @apply heading-2 text-center py-12;
+}
+
+.contacto__contenedor {
+  @apply flex gap-4;
+}
+
+.contacto__mapa {
+  @apply flex-1 flex items-center justify-center;
+}
+
+.contacto__mapa-imagen {
+  @apply;
+}
+
+.contacto__informacion {
+  @apply flex-1;
+}
+
+.contacto__informacion-contenedor {
+  @apply flex mt-24 gap-8;
+}
+
+.contacto__texto {
+  @apply flex items-center gap-3;
+}
+
+.contacto__texto-contenedor {
+  @apply w-10 h-10 rounded-full bg-cerulean flex items-center justify-center;
+}
+
+.contacto__icono {
+  @apply text-white;
+}
