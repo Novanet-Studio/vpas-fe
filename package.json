@@ -8,18 +8,19 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@kevinmarrec/nuxt-pwa": "^0.11.1",
-    "@nuxt/image-edge": "^1.0.0-27809804.194d2d6",
-    "@nuxtjs/strapi": "^1.6.3",
-    "nuxt": "3.0.0",
-    "nuxt-windicss": "^2.5.5"
+    "@kevinmarrec/nuxt-pwa": "^0.15.0",
+    "@nuxt/image-edge": "^1.0.0-27907872.f4dd19d",
+    "@nuxtjs/strapi": "^1.7.1",
+    "nuxt": "3.1.0",
+    "nuxt-windicss": "^2.6.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "@fortawesome/vue-fontawesome": "^3.0.2",
-    "swiper": "^8.4.6"
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "swiper": "^8.4.6",
+    "vue3-rich-accordion": "^0.0.7"
   }
 }
