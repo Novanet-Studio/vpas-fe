@@ -126,7 +126,7 @@ const slides = [
     alternativeText: 'Peces en aguas superficiales del océano',
   },
   {
-    image: '/slides/vpas-mar-y- peces.webp',
+    image: '/slides/vpas-mar-y-peces.webp',
     text: 'Nos hemos dedicado a <strong>crecer</strong> de forma integral, para proveer los mercados nacionales e internacionales con productos de calidad',
     alternativeText: 'Mar de aguas claras con peces en arrecife',
   },
