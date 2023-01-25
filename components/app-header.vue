@@ -11,7 +11,7 @@
       <div class="header__nav">
         <nuxt-link to="/" class="header__link">Inicio</nuxt-link>
         <nuxt-link to="/" class="header__link">Empresa</nuxt-link>
-        <nuxt-link to="/" class="header__link">Productos</nuxt-link>
+        <nuxt-link to="/productos" class="header__link">Productos</nuxt-link>
         <nuxt-link to="/" class="header__link">Especies en Venezuela</nuxt-link>
         <nuxt-link to="/" class="header__link">Blog</nuxt-link>
         <nuxt-link to="/" class="header__link">Contacto</nuxt-link>
