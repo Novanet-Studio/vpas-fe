@@ -39,6 +39,55 @@
             </accordion-list>
           </accordion-item>
         </accordion-list>
+
+        <!-- Second -->
+        <accordion-list>
+          <accordion-item>
+            <template #summary>Especies de agua dulce</template>
+            <!-- <template #icon>+</template> -->
+            <accordion-list open-multiple-items>
+              <accordion-item>
+                <template #summary>Medregal</template>
+                <!-- <template #icon></template> -->
+                Some nested content
+              </accordion-item>
+              <accordion-item>
+                <template #summary>Mero</template>
+                <ul class="fish-list">
+                  <li class="fish-item">fish-1</li>
+                  <li class="fish-item">fish-2</li>
+                  <li class="fish-item">fish-3</li>
+                  <li class="fish-item">fish-4</li>
+                  <li class="fish-item">fish-5</li>
+                </ul>
+              </accordion-item>
+            </accordion-list>
+          </accordion-item>
+        </accordion-list>
+
+        <accordion-list>
+          <accordion-item>
+            <template #summary>Mariscos</template>
+            <!-- <template #icon>+</template> -->
+            <accordion-list open-multiple-items>
+              <accordion-item>
+                <template #summary>Medregal</template>
+                <!-- <template #icon></template> -->
+                Some nested content
+              </accordion-item>
+              <accordion-item>
+                <template #summary>Mero</template>
+                <ul class="fish-list">
+                  <li class="fish-item">fish-1</li>
+                  <li class="fish-item">fish-2</li>
+                  <li class="fish-item">fish-3</li>
+                  <li class="fish-item">fish-4</li>
+                  <li class="fish-item">fish-5</li>
+                </ul>
+              </accordion-item>
+            </accordion-list>
+          </accordion-item>
+        </accordion-list>
       </aside>
       <section class="product__main">
         <h3 class="product__title">Pargo</h3>
@@ -107,17 +156,37 @@
   @apply rounded-lg border border-[#767676];
 }
 
+:deep(.p-aside > div:nth-child(2) > details:nth-child(1)) {
+  @apply rounded-lg border border-[#767676] mt-8;
+}
+
+:deep(.p-aside > div:nth-child(3) > details:nth-child(1)) {
+  @apply rounded-lg border border-[#767676] mt-8;
+}
+
 :deep(.accordion-list .accordion-item) {
   --content-height: 0px;
   height: calc(var(--summary-height) + 26px);
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: height 300ms ease-in-out;
 }
 
 :deep(
     .p-aside > div:nth-child(1) > details:nth-child(1) > summary:nth-child(1)
   ) {
-  @apply bg-gunmetal text-white text-xl font-extrabold;
+  @apply bg-gunmetal text-white text-xl font-extrabold rounded-md;
+}
+
+:deep(
+    .p-aside > div:nth-child(2) > details:nth-child(1) > summary:nth-child(1)
+  ) {
+  @apply bg-bdazzled text-white text-xl font-extrabold rounded-md;
+}
+
+:deep(
+    .p-aside > div:nth-child(3) > details:nth-child(1) > summary:nth-child(1)
+  ) {
+  @apply bg-cerulean text-white text-xl font-extrabold rounded-md;
 }
 
 :deep(.accordion-list .accordion-item > .accordion-item__summary) {
