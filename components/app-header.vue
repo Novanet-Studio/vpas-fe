@@ -15,7 +15,7 @@
         <nuxt-link to="/especies" class="header__link"
           >Especies en Venezuela</nuxt-link
         >
-        <nuxt-link to="/" class="header__link">Blog</nuxt-link>
+        <nuxt-link to="/blog" class="header__link">Blog</nuxt-link>
         <nuxt-link to="/" class="header__link">Contacto</nuxt-link>
       </div>
     </div>

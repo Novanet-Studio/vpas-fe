@@ -527,15 +527,15 @@
 /* Especies en Venezuela */
 /* TODO: Replace bg-footerBg by the right bg */
 .main-notice {
-  @apply relative h-[39.68rem] flex items-center justify-center gap-12 text-white text-sm bg-footerBg bg-no-repeat bg-center bg-cover pb-21;
+  @apply relative h-[39.68rem] px-48 flex items-center justify-between text-white text-sm bg-footerBg bg-no-repeat bg-center bg-cover pb-21;
 }
 
-.main-notice__header {
+.main-notice__image {
   @apply h-[23.75rem] w-[39.6rem] bg-[#d9d9d9] rounded-tl-3xl rounded-br-2xl;
 }
 
 .main-notice__content {
-  @apply flex flex-col self-start mt-24 justify-between h-72;
+  @apply flex flex-col self-start mt-24 justify-between h-72 w-[394px];
 }
 
 .btn--small {
@@ -543,11 +543,15 @@
 }
 
 .main-notice__title {
-  @apply heading-1 border-t-2 border-t-gray-500 pt-8 text-white w-full;
+  @apply heading-2 border-t-2 border-t-gray-500 pt-8 text-white w-full;
 }
 
 .btn--bdazzled {
   @apply bg-bdazzled;
+}
+
+.btn--self-center {
+  @apply self-center;
 }
 
 .especies__info {
@@ -578,6 +582,12 @@
   @apply text-bdazzled;
 }
 
-.especies__cards-wrapper {
-  @apply grid grid-cols-3 mt-12 mb-24;
+.especies__cards-wrapper,
+.blog__cards-wrapper {
+  @apply grid grid-cols-3 gap-12 mt-12 mb-24;
+}
+
+/* Blog */
+.blog__content {
+  @apply px-48;
 }

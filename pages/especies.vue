@@ -2,18 +2,18 @@
   <div class="especies">
     <section class="main-notice">
       <nuxt-img
-        class="main-notice__header"
+        class="main-notice__image"
         src="/slides/vpas-mar-y-peces.webp"
         alt="Notice image"
       />
       <div class="main-notice__content">
-        <div>
-          <h2 class="main-notice__title">Especies</h2>
+        <div class="">
+          <h2 class="main-notice__title">Especies en Venezuela</h2>
           <p class="main-notice__description">
             Lorem ipsum dolor sit amet consectetur.
           </p>
         </div>
-        <button class="btn btn--small">Click aquí</button>
+        <button class="btn btn--small btn--self-center">Click aquí</button>
       </div>
     </section>
     <section class="especies__info">
