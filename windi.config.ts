@@ -38,4 +38,18 @@ export default defineConfig({
       },
     },
   },
+  shortcuts: {
+    heading: 'text-bdazzled font-black',
+    'heading-1': 'heading text-4xl',
+    'heading-2': 'heading text-3xl',
+    'heading-3': 'heading text-2xl',
+    'heading-4': 'heading text-xl',
+    'heading-5': 'heading text-lg',
+    'heading-6': 'heading text-base font-extrabold',
+    'paragraph-a': 'text-xl',
+    'paragraph-b': 'text-3xl',
+    'flex-col-center': 'flex flex-col justify-center',
+    'filter-to-white':
+      'filter invert-99 sepia-2 saturate-75 hue-rotate-99 brightness-0 contrast-100',
+  },
 });

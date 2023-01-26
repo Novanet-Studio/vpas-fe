@@ -112,50 +112,6 @@
         url('@/assets/fonts/inter-v12-latin-900.svg#Inter') format('svg'); /* Legacy iOS */
     font-display: swap;
   }
-
-  .heading {
-    @apply text-bdazzled font-black;
-  }
-
-  .heading-1 {
-    @apply heading text-4xl;
-  }
-
-  .heading-2 {
-    @apply heading text-3xl;
-  }
-
-  .heading-3 {
-    @apply heading text-2xl;
-  }
-
-  .heading-4 {
-    @apply heading text-xl;
-  }
-
-  .heading-5 {
-    @apply heading text-lg;
-  }
-
-  .heading-6 {
-    @apply heading text-base font-extrabold;
-  }
-
-  .paragraph-a {
-    @apply text-xl;
-  }
-
-  .paragraph-b {
-    @apply text-3xl;
-  }
-}
-
-.flex-col-center {
-  @apply flex flex-col justify-center;
-}
-
-.filter-to-white {
-  @apply filter invert-99 sepia-2 saturate-75 hue-rotate-99 brightness-0 contrast-100;
 }
 
 /* --- Containers ---  */
