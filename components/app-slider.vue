@@ -13,8 +13,8 @@
         class="swiper__slide"
       >
         <nuxt-picture
-          :src="slide.image"
-          :alt="slide.alternativeText"
+          :src="slide.attributes.url"
+          :alt="slide.attributes.alternativeText"
           sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
         />
         <div class="swiper__text" v-html="slide.text"></div>
