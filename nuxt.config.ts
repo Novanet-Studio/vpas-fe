@@ -3,6 +3,37 @@ import pwa from "./pwa";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: false,
+  app: {
+    head: {
+      meta: [
+        {
+          name: "title",
+          content: pwa.meta.title,
+        },
+        {
+          name: "description",
+          content: pwa.meta.description,
+        },
+        {
+          name: "name",
+          content: pwa.meta.name,
+        },
+        {
+          name: "author",
+          content: pwa.meta.author,
+        },
+      ],
+    },
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+    },
+    layoutTransition: {
+      name: "layout",
+      mode: "out-in",
+    },
+  },
+
   build: {
     transpile: [
       "@fortawesome/vue-fontawesome",

@@ -1,113 +1,116 @@
 <template>
-  <app-slider :slides="carrusel" />
+  <div>
+    <app-slider :slides="carrusel" />
 
-  <section class="especies">
-    <ul class="especies__lista">
-      <li
-        v-for="(especie, index) in categorias"
-        :key="index"
-        class="especies__item"
-      >
-        <nuxt-img
-          :src="especie.attributes.imagen.data.attributes.url"
-          :alt="especie.attributes.imagen.data.attributes.alternativeText"
-        />
-        <h3 class="especies__titulo">{{ especie.attributes.nombre }}</h3>
-        <nuxt-link :to="especie.attributes.link" class="especies__link"
-          >Ver todas las especies</nuxt-link
+    <section class="especies">
+      <ul class="especies__lista">
+        <li
+          v-for="(especie, index) in categorias"
+          :key="index"
+          class="especies__item"
         >
-      </li>
-    </ul>
-  </section>
-
-  <section class="mensaje">
-    <app-separator altClass="app__separator-top" />
-    <div v-html="mensaje" class="mensaje__text"></div>
-    <ul class="mensaje__iconos">
-      <li
-        v-for="(icono, index) in iconos"
-        :key="index"
-        class="mensaje__icono-contenedor"
-      >
-        <nuxt-img
-          :src="icono.image"
-          :alt="icono.name"
-          class="mensaje__icono-imagen"
-        />
-      </li>
-    </ul>
-  </section>
-
-  <section class="empresa">
-    <ul class="empresa__lista">
-      <li v-for="(item, index) in empresa" class="empresa__item">
-        <div class="empresa__item-container">
-          <h4 class="empresa__valor">{{ item.titulo }}</h4>
-          <p class="empresa__descripcion">{{ item.descripcion }}</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <section class="noticias">
-    <app-separator altClass="app__separator-bottom" />
-    <h2 class="noticias__titulo">Noticias</h2>
-    <ul class="noticias__lista">
-      <li class="noticias__item" v-for="(item, index) in noticias">
-        <div class="noticias__item-container">
           <nuxt-img
-            class="noticias__imagen"
-            :src="item.image"
-            :alt="item.alternativeText"
+            :src="especie.attributes.imagen.data.attributes.url"
+            :alt="especie.attributes.imagen.data.attributes.alternativeText"
           />
-          <h3 class="noticias__item-titulo">{{ item.title }}</h3>
-        </div>
-      </li>
-    </ul>
-  </section>
+          <h3 class="especies__titulo">{{ especie.attributes.nombre }}</h3>
+          <nuxt-link :to="especie.attributes.link" class="especies__link"
+            >Ver todas las especies</nuxt-link
+          >
+        </li>
+      </ul>
+    </section>
 
-  <section class="contacto">
-    <h2 class="contacto__titulo">Contáctanos</h2>
-    <div class="contacto__contenedor">
-      <div class="contacto__informacion">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore ullam
-          est veritatis culpa, architecto, totam quisquam quibusdam consequuntur
-          hic saepe sed quam fugit suscipit facere quaerat temporibus inventore,
-          eaque officia.
-        </p>
-        <div class="contacto__informacion-contenedor">
-          <div class="contacto__texto">
-            <div class="contacto__texto-contenedor">
-              <font-awesome-icon
-                class="contacto__icono"
-                :icon="['fa', 'phone']"
-                size="lg"
-              />
-            </div>
-            <p>+58 212 265 34 35</p>
+    <section class="mensaje">
+      <app-separator altClass="app__separator-top" />
+      <div v-html="mensaje" class="mensaje__text"></div>
+      <ul class="mensaje__iconos">
+        <li
+          v-for="(icono, index) in iconos"
+          :key="index"
+          class="mensaje__icono-contenedor"
+        >
+          <nuxt-img
+            :src="icono.image"
+            :alt="icono.name"
+            class="mensaje__icono-imagen"
+          />
+        </li>
+      </ul>
+      <app-separator altClass="app__separator-bottom" />
+    </section>
+
+    <section class="empresa">
+      <ul class="empresa__lista">
+        <li v-for="(item, index) in empresa" class="empresa__item">
+          <div class="empresa__item-container">
+            <h4 class="empresa__valor">{{ item.titulo }}</h4>
+            <p class="empresa__descripcion">{{ item.descripcion }}</p>
           </div>
-          <div class="contacto__texto">
-            <div class="contacto__texto-contenedor">
-              <font-awesome-icon
-                class="contacto__icono"
-                :icon="['fa', 'envelope']"
-                size="lg"
-              />
+        </li>
+      </ul>
+    </section>
+
+    <section class="noticias">
+      <app-separator altClass="app__separator-bottom" />
+      <h2 class="noticias__titulo">Noticias</h2>
+      <ul class="noticias__lista">
+        <li class="noticias__item" v-for="(item, index) in noticias">
+          <div class="noticias__item-container">
+            <nuxt-img
+              class="noticias__imagen"
+              :src="item.image"
+              :alt="item.alternativeText"
+            />
+            <h3 class="noticias__item-titulo">{{ item.title }}</h3>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contacto">
+      <h2 class="contacto__titulo">Contáctanos</h2>
+      <div class="contacto__contenedor">
+        <div class="contacto__informacion">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore
+            ullam est veritatis culpa, architecto, totam quisquam quibusdam
+            consequuntur hic saepe sed quam fugit suscipit facere quaerat
+            temporibus inventore, eaque officia.
+          </p>
+          <div class="contacto__informacion-contenedor">
+            <div class="contacto__texto">
+              <div class="contacto__texto-contenedor">
+                <font-awesome-icon
+                  class="contacto__icono"
+                  :icon="['fa', 'phone']"
+                  size="lg"
+                />
+              </div>
+              <p>+58 212 265 34 35</p>
             </div>
-            <p>info@vpasgroup.com</p>
+            <div class="contacto__texto">
+              <div class="contacto__texto-contenedor">
+                <font-awesome-icon
+                  class="contacto__icono"
+                  :icon="['fa', 'envelope']"
+                  size="lg"
+                />
+              </div>
+              <p>info@vpasgroup.com</p>
+            </div>
           </div>
         </div>
+        <div class="contacto__mapa">
+          <nuxt-img
+            class="contacto__mapa-imagen"
+            src="/vpas-mapa-venezuela.svg"
+            alt="Mapa de venezuela"
+          />
+        </div>
       </div>
-      <div class="contacto__mapa">
-        <nuxt-img
-          class="contacto__mapa-imagen"
-          src="/vpas-mapa-venezuela.svg"
-          alt="Mapa de venezuela"
-        />
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -153,11 +156,15 @@ try {
       carrusel(id: 1) {
         data {
           attributes {
+            nombre
             imagenes {
-              data {
-                attributes {
-                  url
-                  alternativeText
+              texto
+              imagen {
+                data {
+                  attributes {
+                    url
+                    alternativeText
+                  }
                 }
               }
             }
@@ -168,7 +175,7 @@ try {
   `);
 
   categorias.value = query.data.categorias.data;
-  carrusel.value = query.data.carrusel.data.attributes.imagenes.data;
+  carrusel.value = query.data.carrusel.data.attributes.imagenes;
 } catch (err) {
   console.error("An error occured while fetching home data! ", err);
 }

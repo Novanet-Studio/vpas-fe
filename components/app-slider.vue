@@ -13,11 +13,12 @@
         class="swiper__slide"
       >
         <nuxt-picture
-          :src="slide.attributes.url"
-          :alt="slide.attributes.alternativeText"
+          :src="slide.imagen.data.attributes.url"
+          :alt="slide.imagen.data.attributes.alternativeText"
           sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
         />
-        <div class="swiper__text" v-html="slide.text"></div>
+        <div class="swiper__text" v-html="markdown.render(slide.texto)"></div>
+
       </swiper-slide>
     </swiper>
     <app-div altClass="app__div-slider" />
@@ -29,6 +30,12 @@ import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import MarkdownIt from "markdown-it";
+const markdown = new MarkdownIt();
+
+const clog = (e: any) => {
+  console.log(e);
+};
 
 type Props = {
   slides: any;

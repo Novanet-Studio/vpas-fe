@@ -273,7 +273,7 @@
 }
 
 .mensaje {
-  @apply heading-2 text-center text-gunmetal font-black hyphens-none px-48;
+  @apply heading-2 text-center text-gunmetal font-black hyphens-none px-48 py-18;
 }
 
 .mensaje__text {
@@ -285,7 +285,7 @@
 }
 
 .mensaje__iconos {
-  @apply flex flex-wrap justify-center mt-8;
+  @apply flex flex-wrap justify-center mb-8;
 }
 
 .mensaje__icono-contenedor {
