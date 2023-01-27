@@ -416,6 +416,63 @@
   @apply text-white;
 }
 
+/* Empresa */
+.empresa__header {
+  @apply px-48 py-28 bg-gradient-to-b from-[#1C2A35] to-[#39556E] bg-no-repeat flex;
+}
+
+.empresa__header-content {
+  @apply flex-1;
+}
+
+.empresa__header-title {
+  @apply heading-2 text-white mb-2;
+}
+
+.empresa__description {
+  @apply text-white text-xl;
+}
+
+.empresa__header-action {
+  @apply flex-1 flex justify-center items-center;
+}
+
+.empresa__container {
+  @apply my-28 flex flex-col gap-24 px-48;
+}
+
+.empresa__inner-section {
+  @apply flex gap-12;
+}
+
+.empresa__image {
+  @apply w-60 h-60 rounded-full;
+}
+
+.empresa__content {
+  @apply;
+}
+
+.empresa__section-title {
+  @apply heading-3 text-gunmetal;
+}
+
+.empresa__title-divition {
+  @apply my-2 ml-8 h-[1px] w-52 bg-[#767676];
+}
+
+.empresa__section-content {
+  @apply;
+}
+
+.empresa__section-list {
+  @apply;
+}
+
+.empresa__section-item {
+  @apply mb-4 before:content-['🐟'] before:pr-2;
+}
+
 /* --- Products ---  */
 .product__header {
   @apply px-48 py-28 bg-gradient-to-b from-[#1C2A35] to-[#39556E] bg-no-repeat flex;
