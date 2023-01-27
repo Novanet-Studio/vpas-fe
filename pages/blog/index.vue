@@ -19,13 +19,14 @@
     <h3 class="heading-2 text-center py-8 mt-12">Noticias</h3>
     <section class="blog__content">
       <div class="blog__cards-wrapper">
-        <app-card
-          :title="news.title"
-          :image="news.image"
-          image-alt="image 1"
-          v-for="(news, index) in noticias"
-          :key="index"
-        />
+        <nuxt-link :to="`/blog/${index}`" v-for="(news, index) in noticias">
+          <app-card
+            :title="news.title"
+            :image="news.image"
+            :image-alt="news?.alternativeText ?? ''"
+            :key="index"
+          />
+        </nuxt-link>
       </div>
     </section>
   </div>
