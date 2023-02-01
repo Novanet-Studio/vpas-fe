@@ -4,7 +4,8 @@
       <app-header />
       <div class="article-header">
         <nuxt-picture
-          src="/slides/vpas-fondo-mar-y-peces.webp"
+          provider="cloudinary"
+          src="/v1675095252/vpas/uploads/vpas_fondo_mar_y_peces_854a29677a.webp"
           alt="Fondo mar y peces"
           sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
         />
@@ -17,7 +18,7 @@
       <div class="wrapper">
         <main class="main">
           <slot />
-          <app-separator altClass="app__separator-bottom" />
+          <app-separator altClass="app__separator-bottom mt-4" />
         </main>
         <aside class="aside">
           <app-card

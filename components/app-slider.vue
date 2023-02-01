@@ -18,7 +18,6 @@
           sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
         />
         <div class="swiper__text" v-html="markdown.render(slide.texto)"></div>
-
       </swiper-slide>
     </swiper>
     <app-div altClass="app__div-slider" />
@@ -26,16 +25,12 @@
 </template>
 
 <script lang="ts" setup>
-import { Autoplay, Navigation, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import MarkdownIt from "markdown-it";
+import { Autoplay, Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import MarkdownIt from 'markdown-it';
 const markdown = new MarkdownIt();
-
-const clog = (e: any) => {
-  console.log(e);
-};
 
 type Props = {
   slides: any;
