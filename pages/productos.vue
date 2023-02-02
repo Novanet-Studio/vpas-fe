@@ -16,73 +16,29 @@
     </header>
     <div class="product__content">
       <aside class="p-aside">
-        <accordion-list>
+        <accordion-list v-for="(category, index) in categories" :key="index">
           <accordion-item>
-            <template #summary>Especies de mar</template>
-            <!-- <template #icon>+</template> -->
-            <accordion-list open-multiple-items>
-              <accordion-item>
-                <template #summary>Medregal</template>
-                <!-- <template #icon></template> -->
-                Some nested content
-              </accordion-item>
-              <accordion-item>
-                <template #summary>Mero</template>
-                <ul class="fish-list">
-                  <li class="fish-item">fish-1</li>
-                  <li class="fish-item">fish-2</li>
-                  <li class="fish-item">fish-3</li>
-                  <li class="fish-item">fish-4</li>
-                  <li class="fish-item">fish-5</li>
-                </ul>
-              </accordion-item>
-            </accordion-list>
-          </accordion-item>
-        </accordion-list>
-
-        <!-- Second -->
-        <accordion-list>
-          <accordion-item>
-            <template #summary>Especies de agua dulce</template>
-            <!-- <template #icon>+</template> -->
-            <accordion-list open-multiple-items>
-              <accordion-item>
-                <template #summary>Medregal</template>
-                <!-- <template #icon></template> -->
-                Some nested content
-              </accordion-item>
-              <accordion-item>
-                <template #summary>Mero</template>
-                <ul class="fish-list">
-                  <li class="fish-item">fish-1</li>
-                  <li class="fish-item">fish-2</li>
-                  <li class="fish-item">fish-3</li>
-                  <li class="fish-item">fish-4</li>
-                  <li class="fish-item">fish-5</li>
-                </ul>
-              </accordion-item>
-            </accordion-list>
-          </accordion-item>
-        </accordion-list>
-
-        <accordion-list>
-          <accordion-item>
-            <template #summary>Mariscos</template>
-            <!-- <template #icon>+</template> -->
-            <accordion-list open-multiple-items>
-              <accordion-item>
-                <template #summary>Medregal</template>
-                <!-- <template #icon></template> -->
-                Some nested content
-              </accordion-item>
-              <accordion-item>
-                <template #summary>Mero</template>
-                <ul class="fish-list">
-                  <li class="fish-item">fish-1</li>
-                  <li class="fish-item">fish-2</li>
-                  <li class="fish-item">fish-3</li>
-                  <li class="fish-item">fish-4</li>
-                  <li class="fish-item">fish-5</li>
+            <template #summary>{{ category.attributes.nombre }}</template>
+            <accordion-list>
+              <accordion-item
+                v-for="(product, iter) in category.attributes.productos.data"
+                :key="iter"
+              >
+                <template #summary>{{
+                  product.attributes.nombre_especie
+                }}</template>
+                <ul
+                  class="fish-list"
+                  v-for="(subespecie, subindex) in product.attributes
+                    .subespecie"
+                  :key="subindex"
+                >
+                  <li
+                    class="fish-item"
+                    @click="handleSelectSubEspecie(product, subespecie)"
+                  >
+                    {{ subespecie.nombre_subespecie }}
+                  </li>
                 </ul>
               </accordion-item>
             </accordion-list>
@@ -90,46 +46,50 @@
         </accordion-list>
       </aside>
       <section class="product__main">
-        <h3 class="product__title">Pargo</h3>
+        <h3 class="product__title">
+          {{ selected?.attributes.nombre_especie }}
+        </h3>
         <div class="product__actions">
           <button
-            class="product__btn product__btn--active product__btn--alt-tl"
+            class="product__btn"
+            :class="[
+              subEspecie?.nombre_subespecie === subespecie.nombre_subespecie &&
+                'product__btn--active',
+            ]"
+            v-for="(subespecie, index) in selected?.attributes.subespecie"
+            @click="handleClick(subespecie)"
+            :key="index"
           >
-            Cebadal
+            {{ subespecie.nombre_subespecie }}
           </button>
-          <button class="product__btn">Conoro</button>
-          <button class="product__btn">Cunaro</button>
-          <button class="product__btn">Gallo</button>
-          <button class="product__btn product__btn--alt-br">Guanapo</button>
         </div>
         <nuxt-img
-          src="/slides/vpas-mar-y-peces.webp"
+          :src="subEspecie?.imagen.data.attributes.url"
+          :alt="subEspecie?.imagen.data.attributes.alternativeText"
           class="product__main-image"
         />
         <app-separator class="product__separator" />
         <div class="product-info">
           <div class="product-info__name-wrapper">
             <h5 class="product-info__title">Nombre técnico</h5>
-            <p class="product-info__content">Mutton Snapper</p>
+            <p class="product-info__content">
+              {{ subEspecie?.nombre_tecnico }}
+            </p>
           </div>
           <h5 class="product-info__title">Presentación</h5>
           <div class="product-info__presentation">
-            <div class="product-card">
+            <div
+              class="product-card"
+              v-for="(presentation, index) in subEspecie?.presentacion.data"
+              :key="index"
+            >
               <nuxt-img
-                src="/slides/vpas-fondo-mar-y-peces.webp"
+                v-if="presentation?.attributes"
                 class="product-card__image"
-                alt="Image"
+                :src="presentation.attributes.url"
+                :alt="presentation.attributes.alternativeText"
               />
-              <h6 class="product-card__title">Filete</h6>
-            </div>
-
-            <div class="product-card">
-              <nuxt-img
-                src="/slides/vpas-fondo-mar-y-peces.webp"
-                class="product-card__image"
-                alt="Image"
-              />
-              <h6 class="product-card__title">Entero</h6>
+              <!-- <h6 class="product-card__title">Filete</h6> -->
             </div>
           </div>
         </div>
@@ -137,6 +97,80 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+const categories = ref<Project.CategoriesData[]>([]);
+const selected = ref<Project.ProductsData>();
+const subEspecie = ref<Project.SubEspecie>();
+const graphql = useStrapiGraphQL();
+
+function handleSelectSubEspecie(
+  product: Project.ProductsData,
+  subspecie: Project.SubEspecie
+) {
+  selected.value = product;
+  subEspecie.value = subspecie;
+}
+
+function handleClick(subspecie: Project.SubEspecie) {
+  subEspecie.value = subspecie;
+}
+
+try {
+  const query = await graphql<Project.CategoriesRequest>(`
+    query {
+      categorias {
+        data {
+          attributes {
+            nombre
+            imagen {
+              data {
+                attributes {
+                  url
+                  alternativeText
+                }
+              }
+            }
+            productos {
+              data {
+                attributes {
+                  nombre_especie
+                  subespecie {
+                    nombre_subespecie
+                    nombre_tecnico
+                    imagen {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                        }
+                      }
+                    }
+                    presentacion {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  categories.value = query.data.categorias.data;
+  selected.value = query.data.categorias.data[1].attributes.productos.data[0];
+  subEspecie.value = selected.value.attributes.subespecie[0];
+} catch (error) {
+  console.log('An error occurred while fetching categories: ', error);
+}
+</script>
 
 <style scoped>
 :global(:root) {
@@ -294,6 +328,6 @@
 }
 
 .fish-item {
-  @apply p-2 pl-8 border-b border-b-[#898989];
+  @apply p-2 pl-8 border-b border-b-[#898989] cursor-pointer;
 }
 </style>

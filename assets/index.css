@@ -503,11 +503,11 @@
 }
 
 .product__content {
-  @apply flex gap-24 w-full px-48 mt-8;
+  @apply flex gap-24 px-48 mt-8;
 }
 
 .product__main {
-  @apply border-red-200 flex-basis-[40%];
+  @apply border-red-200 flex-basis-[60%];
 }
 
 .product__actions {
@@ -515,7 +515,7 @@
 }
 
 .product__btn {
-  @apply w-32 h-11 py-4 px-6 bg-cerulean text-white text-center align-middle flex items-center justify-center;
+  @apply w-32 h-11 py-4 px-6 bg-cerulean text-white text-center align-middle flex items-center justify-center first:rounded-tl-lg last:rounded-br-lg;
 }
 
 .product__btn--active {
@@ -578,7 +578,7 @@
 
 /* Product Aside */
 .p-aside {
-  @apply flex-basis-[60%] mt-14;
+  @apply flex-basis-[20%] mt-14;
 }
 
 /* Especies en Venezuela */
