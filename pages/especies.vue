@@ -27,21 +27,102 @@
     </section>
     <section class="especies__content">
       <div class="especies__content-header">
-        <a class="especies__item-link especies__item-link--active" href="#"
-          >Especies de mar</a
+        <a
+          class="especies__item-link"
+          :class="[
+            selected?.attributes.nombre === category.attributes.nombre &&
+              'especies__item-link--active',
+          ]"
+          href="#"
+          v-for="(category, index) in categories"
+          :key="index"
+          @click="
+            (e) => {
+              e.preventDefault();
+              handleSelectCategory(category);
+            }
+          "
+          >{{ category.attributes.nombre }}</a
         >
-        <a class="especies__item-link" href="#">Especies de agua dulce</a>
-        <a class="especies__item-link" href="#">Mariscos</a>
       </div>
       <div class="especies__cards-wrapper">
-        <app-card
-          title="Especie"
-          image="/vpas-especie-de-mar-pargo.webp"
-          image-alt="image 1"
-          v-for="i in 6"
-          :key="i"
-        />
+        <template
+          v-for="(item, index) in selected?.attributes.productos.data"
+          :key="index"
+        >
+          <app-card
+            :title="sub.nombre_subespecie"
+            :image="sub.imagen.data.attributes.url"
+            :image-alt="sub.imagen.data.attributes.alternativeText"
+            v-for="(sub, i) in item.attributes.subespecie"
+          />
+        </template>
       </div>
     </section>
   </div>
 </template>
+
+<script lang="ts" setup>
+const categories = ref<Project.CategoriesData[]>([]);
+const selected = ref<Project.CategoriesData>();
+const graphql = useStrapiGraphQL();
+
+function handleSelectCategory(category: Project.CategoriesData) {
+  selected.value = category;
+}
+
+try {
+  const query = await graphql<Project.CategoriesRequest>(`
+    query {
+      categorias {
+        data {
+          attributes {
+            nombre
+            imagen {
+              data {
+                attributes {
+                  url
+                  alternativeText
+                }
+              }
+            }
+            productos {
+              data {
+                attributes {
+                  nombre_especie
+                  subespecie {
+                    nombre_subespecie
+                    nombre_tecnico
+                    imagen {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                        }
+                      }
+                    }
+                    presentacion {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  categories.value = query.data.categorias.data;
+  // Default select first category
+  selected.value = categories.value[0];
+} catch (error) {
+  console.log('An error occurred while fetching categories: ', error);
+}
+</script>
