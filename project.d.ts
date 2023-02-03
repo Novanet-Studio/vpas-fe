@@ -1,6 +1,10 @@
 // This .d.ts file must contain the project type declaration
 declare namespace Project {
   // API Request
+  type IndexRequest = {
+    data: IndexRequestData;
+  };
+
   type ArticlesRequest = {
     data: ArticlesRequestData;
   };
@@ -14,6 +18,12 @@ declare namespace Project {
   };
 
   // API Request Data
+  type IndexRequestData = {
+    categorias: Categories;
+    articulos: Articles;
+    carrusel: Carousel;
+  };
+
   type ArticlesRequestData = {
     articulos: Articles;
   };
@@ -39,6 +49,10 @@ declare namespace Project {
     data: CategoriesData[];
   };
 
+  type Carousel = {
+    data: CarouselData;
+  };
+
   // API Data
   type ArticlesData = {
     attributes: ArticleAttributes;
@@ -50,6 +64,10 @@ declare namespace Project {
 
   type CategoriesData = {
     attributes: CategoryAttributes;
+  };
+
+  type CarouselData = {
+    attributes: CarouselAttributes;
   };
 
   // Data Attributes
@@ -67,8 +85,19 @@ declare namespace Project {
 
   type CategoryAttributes = {
     nombre: string;
+    link: string;
     imagen: Image;
     productos: Products;
+  };
+
+  type CarouselAttributes = {
+    nombre: string;
+    imagenes: CarouselImages[];
+  };
+
+  type CarouselImages = {
+    texto: string;
+    imagen: Image;
   };
 
   type SubEspecie = {

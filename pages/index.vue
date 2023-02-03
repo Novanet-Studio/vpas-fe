@@ -57,16 +57,16 @@
       <ul class="noticias__lista">
         <li
           class="noticias__item"
-          v-for="(item, index) in noticias"
+          v-for="(item, index) in articles"
           :key="index"
         >
           <div class="noticias__item-container">
             <nuxt-img
               class="noticias__imagen"
-              :src="item.image"
-              :alt="item.alternativeText"
+              :src="item.attributes.imagen.data.attributes.url"
+              :alt="item.attributes.imagen.data.attributes.alternativeText"
             />
-            <h3 class="noticias__item-titulo">{{ item.title }}</h3>
+            <h3 class="noticias__item-titulo">{{ item.attributes.titulo }}</h3>
           </div>
         </li>
       </ul>
@@ -129,12 +129,13 @@ useHead({
   },
 });
 
-const categorias = ref();
-const carrusel = ref();
+const categorias = ref<Project.CategoriesData[]>([]);
+const carrusel = ref<Project.CarouselImages[]>([]);
+const articles = ref<Project.ArticlesData[]>([]);
 const graphql = useStrapiGraphQL();
 
 try {
-  const query = await graphql<any>(`
+  const query = await graphql<Project.IndexRequest>(`
     query {
       categorias(sort: "id:asc") {
         data {
@@ -171,10 +172,30 @@ try {
           }
         }
       }
+
+      articulos(sort: "id:asc", pagination: { limit: 3 }) {
+        data {
+          attributes {
+            titulo
+            descripcion
+            slug
+            imagen {
+              data {
+                id
+                attributes {
+                  url
+                  alternativeText
+                }
+              }
+            }
+          }
+        }
+      }
     }
   `);
 
   categorias.value = query.data.categorias.data;
+  articles.value = query.data.articulos.data;
   carrusel.value = query.data.carrusel.data.attributes.imagenes;
 } catch (err) {
   console.error('An error occured while fetching home data! ', err);
@@ -212,27 +233,6 @@ const empresa = [
     titulo: 'Visión',
     descripcion:
       'Proveer a nuestros clientes nacionales e internacionales productos de calidad. Participar de manera sostenida y creciente en el desarrollo de la industria alimentaria.',
-  },
-];
-
-const noticias = [
-  {
-    image: '/noticias/vpas-noticia-1.webp',
-    title:
-      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur',
-    alternativetitle: 'Pargo rojo',
-  },
-  {
-    image: '/noticias/vpas-noticia-2.webp',
-    title:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque',
-    alternativeText: 'Cachama',
-  },
-  {
-    image: '/noticias/vpas-noticia-3.webp',
-    title:
-      'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihi',
-    alternativeText: 'Langosta',
   },
 ];
 </script>
