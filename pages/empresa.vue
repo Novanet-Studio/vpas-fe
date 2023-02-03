@@ -16,10 +16,7 @@
     </header>
     <section class="empresa__container">
       <div class="empresa__inner-section">
-        <nuxt-img
-          class="empresa__image"
-          src="/slides/vpas-fondo-mar-y-peces.webp"
-        />
+        <nuxt-img class="empresa__image" src="/noticias/vpas-noticia-1.webp" />
         <div class="empresa__content">
           <h3 class="empresa__section-title">¿Quienes somos?</h3>
           <div class="empresa__title-divition" />
@@ -40,10 +37,7 @@
       </div>
 
       <div class="empresa__inner-section">
-        <nuxt-img
-          class="empresa__image"
-          src="/slides/vpas-fondo-mar-y-peces.webp"
-        />
+        <nuxt-img class="empresa__image" src="/noticias/vpas-noticia-2.webp" />
         <div class="empresa__content">
           <h3 class="empresa__section-title">Misión</h3>
           <div class="empresa__title-divition" />
@@ -56,10 +50,7 @@
       </div>
 
       <div class="empresa__inner-section">
-        <nuxt-img
-          class="empresa__image"
-          src="/slides/vpas-fondo-mar-y-peces.webp"
-        />
+        <nuxt-img class="empresa__image" src="/noticias/vpas-noticia-3.webp" />
         <div class="empresa__content">
           <h3 class="empresa__section-title">Visión</h3>
           <div class="empresa__title-divition" />

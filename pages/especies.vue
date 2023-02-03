@@ -3,7 +3,7 @@
     <section class="main-notice">
       <nuxt-img
         class="main-notice__image"
-        src="/slides/vpas-mar-y-peces.webp"
+        src="/vpas-fondo-marino.webp"
         alt="Notice image"
       />
       <div class="main-notice__content">
