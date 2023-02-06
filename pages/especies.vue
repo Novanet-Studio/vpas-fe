@@ -15,6 +15,7 @@
         </div>
         <button class="btn btn--small btn--self-center">Click aquí</button>
       </div>
+      <app-div class="app-div" inverted />
     </section>
     <section class="especies__info">
       <p class="especies__description">

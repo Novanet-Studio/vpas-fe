@@ -12,7 +12,7 @@
       <div class="product__header-action">
         <button class="btn">Más información</button>
       </div>
-      <!-- <app-div class="absolute z-20" /> -->
+      <app-div class="app-div" inverted />
     </header>
     <div class="product__content">
       <aside class="p-aside">

@@ -17,6 +17,7 @@
         </div>
         <button class="btn btn--small btn--self-center">Click aquí</button>
       </div>
+      <app-div class="app-div" inverted />
     </section>
     <h3 class="heading-2 text-center py-8 mt-12">Noticias</h3>
     <section class="blog__content">

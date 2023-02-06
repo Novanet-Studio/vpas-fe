@@ -418,7 +418,7 @@
 
 /* Empresa */
 .empresa__header {
-  @apply px-48 py-28 bg-gradient-to-b from-[#1C2A35] to-[#39556E] bg-no-repeat flex;
+  @apply px-48 py-[110px] bg-gradient-to-b from-[#1C2A35] to-[#39556E] bg-no-repeat flex relative;
 }
 
 .empresa__header-content {
@@ -475,7 +475,7 @@
 
 /* --- Products ---  */
 .product__header {
-  @apply px-48 py-28 bg-gradient-to-b from-[#1C2A35] to-[#39556E] bg-no-repeat flex;
+  @apply px-48 py-[110px] bg-gradient-to-b from-[#1C2A35] to-[#39556E] bg-no-repeat flex relative;
 }
 
 .product__header-content {
@@ -492,6 +492,10 @@
 
 .product__header-action {
   @apply flex-1 flex justify-center items-center;
+}
+
+.app-div {
+  @apply absolute left-0 bottom-0 z-20;
 }
 
 .btn {
