@@ -7,8 +7,18 @@
           alt="Grupo VPAS logo"
           class="header__logo-image"
         />
+        <div
+          class="header__bars"
+          @click="toggleMenu"
+          :class="`header__bars ${isExpanded && 'header__bars--expanded'}`"
+        >
+          <font-awesome-icon :icon="['fas', 'bars']" size="2x" />
+        </div>
       </div>
-      <div class="header__nav">
+      <nav
+        :class="`header__nav ${isExpanded && 'header__nav--expanded'}`"
+        @click="toggleMenu"
+      >
         <nuxt-link to="/" class="header__link">Inicio</nuxt-link>
         <nuxt-link to="/empresa" class="header__link">Empresa</nuxt-link>
         <nuxt-link to="/productos" class="header__link">Productos</nuxt-link>
@@ -17,7 +27,15 @@
         >
         <nuxt-link to="/blog" class="header__link">Blog</nuxt-link>
         <nuxt-link to="/" class="header__link">Contacto</nuxt-link>
-      </div>
+      </nav>
     </div>
   </header>
 </template>
+
+<script lang="ts" setup>
+const isExpanded = ref(false);
+
+const toggleMenu = () => {
+  isExpanded.value = !isExpanded.value;
+};
+</script>

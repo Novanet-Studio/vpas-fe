@@ -7,7 +7,7 @@
         alt="Notice image"
       />
       <div class="main-notice__content">
-        <div class="">
+        <div class="main-notice__wrapper">
           <h2 class="main-notice__title">Especies en Venezuela</h2>
           <p class="main-notice__description">
             Lorem ipsum dolor sit amet consectetur.

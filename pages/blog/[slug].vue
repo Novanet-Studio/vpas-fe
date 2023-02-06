@@ -1,12 +1,12 @@
 <template>
-  <div class="w-[680px]">
+  <div class="article">
     <header>
       <nuxt-img
         :src="article?.attributes.imagen.data.attributes.url"
         :alt="article?.attributes.imagen.data.attributes.alternativeText"
-        class="rounded-tl-[20px] rounded-br-[15px]"
+        class="article__image"
       />
-      <h2 class="my-4 heading-2">{{ article?.attributes.titulo }}</h2>
+      <h2 class="article__title">{{ article?.attributes.titulo }}</h2>
     </header>
     <div v-html="markdown.render(article?.attributes.descripcion)"></div>
   </div>

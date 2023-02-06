@@ -60,11 +60,11 @@ const noticias = [
 
 <style scoped>
 .wrapper {
-  @apply grid grid-cols-[70%,30%] px-48 my-24;
+  @apply grid px-8  place-content-center md:(grid-cols-[70%,30%] px-48 my-24);
 }
 
 .aside {
-  @apply flex flex-col gap-8 pl-8 border-l-[1px] border-l-[#767676];
+  @apply flex flex-col gap-8 md:(pl-8 border-l-[1px] border-l-[#767676]);
 }
 
 .article-header {
@@ -72,6 +72,6 @@ const noticias = [
 }
 
 .article-header__text {
-  @apply absolute top-[40%] text-4xl text-left text-white hyphens-none px-16 font-bold;
+  @apply absolute text-xl top-[40%] md:text-4xl text-left text-white hyphens-none px-16 font-bold;
 }
 </style>
