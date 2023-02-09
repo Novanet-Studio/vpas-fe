@@ -11,21 +11,7 @@
         <p class="footer__legal">
           Grupo VPAS, C.A. - Derechos reservados © 2023.
         </p>
-        <div class="footer__rrss">
-          <a class="footer__link" href="https://instagram.com" target="_blank">
-            <font-awesome-icon :icon="['fab', 'instagram']" size="xl" />
-          </a>
-          <a class="footer__link" href="https://facebook.com" target="_blank">
-            <font-awesome-icon :icon="['fab', 'facebook']" size="xl" />
-          </a>
-          <a
-            class="footer__link"
-            href="https://whatsapp.me/+581241289"
-            target="_blank"
-          >
-            <font-awesome-icon :icon="['fab', 'whatsapp']" size="xl" />
-          </a>
-        </div>
+        <social-networks />
       </div>
       <div class="footer__developer">
         <p class="footer__developer-text">Sitio web realizado por:</p>
