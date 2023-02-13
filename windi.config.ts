@@ -14,7 +14,7 @@ export default defineConfig({
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
-        silver: '#767676',
+        silver: '#C0C0C0',
         gunmetal: '#1C2A35',
         bdazzled: '#39556E',
         cerulean: '#789BBA',
@@ -22,7 +22,7 @@ export default defineConfig({
         platinum: '#E5E5E5',
       },
       textColor: {
-        silver: '#767676',
+        silver: '#C0C0C0',
         gunmetal: '#1C2A35',
         bdazzled: '#39556E',
         cerulean: '#789BBA',
@@ -35,6 +35,7 @@ export default defineConfig({
       backgroundImage: {
         footerBg: "url('./assets/images/vpas-fondo-marino.webp')",
         footerShape: "url('./assets/images/vpas-footer-forma.svg')",
+        empresaRoundBg: "url('./assets/images/vpas-empresa-imagen-fondo.svg')",
       },
     },
   },

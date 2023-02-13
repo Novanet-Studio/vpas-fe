@@ -1,25 +1,22 @@
 <template>
   <div class="empresa">
-    <header class="empresa__header">
-      <div class="empresa__header-content">
-        <h2 class="empresa__header-title">Empresa</h2>
-        <p class="empresa__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-          saepe. Et debitis quam, soluta explicabo facere voluptas quasi. Cum,
-          ut.
-        </p>
-      </div>
-      <div class="empresa__header-action">
-        <button class="btn">Más información</button>
-      </div>
-      <app-div class="app-div" inverted />
-    </header>
-    <section class="empresa__container">
-      <div class="empresa__inner-section">
-        <nuxt-img class="empresa__image" src="/noticias/vpas-noticia-1.webp" />
-        <div class="empresa__content">
-          <h3 class="empresa__section-title">¿Quienes somos?</h3>
-          <div class="empresa__title-divition" />
+    <app-hero
+      titulo="Empresa"
+      descripcion="Somos una organización del sector de alimentos especializada en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas"
+      textoBoton="Más información"
+    />
+    <section class="empresa__section">
+      <div class="empresa__entry">
+        <div class="empresa__entry-image-container">
+          <nuxt-img
+            class="empresa__entry-image"
+            src="https://res.cloudinary.com/novanet-studio/image/upload/v1676309676/vpas/uploads/vpas_empresa_quienes_somos_652aa3183f.webp"
+          />
+        </div>
+
+        <div class="empresa__entry-content">
+          <h3 class="empresa__entry-title">¿Quienes somos?</h3>
+
           <p class="empresa__section-content">
             Una empresa del sector alimentos que se especializa en el
             procesamiento y comercialización de pescados, mariscos, moluscos y
@@ -36,28 +33,53 @@
         </div>
       </div>
 
-      <div class="empresa__inner-section">
-        <nuxt-img class="empresa__image" src="/noticias/vpas-noticia-2.webp" />
-        <div class="empresa__content">
-          <h3 class="empresa__section-title">Misión</h3>
-          <div class="empresa__title-divition" />
-          <ul class="empresa__section-list">
-            <li class="empresa__section-item">lorem ipsum 1</li>
-            <li class="empresa__section-item">lorem ipsum 2</li>
-            <li class="empresa__section-item">lorem ipsum 3</li>
+      <div class="empresa__entry">
+        <div class="empresa__entry-image-container">
+          <nuxt-img
+            class="empresa__entry-image"
+            src="https://res.cloudinary.com/novanet-studio/image/upload/v1676309676/vpas/uploads/vpas_empresa_mision_77115ad32b.webp"
+          />
+        </div>
+        <div class="empresa__entry-content">
+          <h3 class="empresa__entry-title">Misión</h3>
+
+          <ul class="empresa__entry-list">
+            <li class="empresa__entry-item">
+              Convertirnos en la empresa venezolana por excelencia en el
+              procesamiento, comercialización y exportación de recursos
+              hidrobiológicos.
+            </li>
+            <li class="empresa__entry-item">
+              Consolidar a Grupo V.P.A.S. C.A., en nuestros mercados cautivos y
+              ampliar nuestra participación a nivel global.
+            </li>
+            <li class="empresa__entry-item">
+              Ser una fuente importante de empleo y seguir aplicando tecnología
+              de punta en nuestros procesos.
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="empresa__inner-section">
-        <nuxt-img class="empresa__image" src="/noticias/vpas-noticia-3.webp" />
-        <div class="empresa__content">
-          <h3 class="empresa__section-title">Visión</h3>
-          <div class="empresa__title-divition" />
-          <ul class="empresa__section-list">
-            <li class="empresa__section-item">lorem ipsum 1</li>
-            <li class="empresa__section-item">lorem ipsum 2</li>
-            <li class="empresa__section-item">lorem ipsum 3</li>
+      <div class="empresa__entry">
+        <div class="empresa__entry-image-container">
+          <nuxt-img
+            class="empresa__entry-image"
+            src="https://res.cloudinary.com/novanet-studio/image/upload/v1676309676/vpas/uploads/vpas_empresa_vision_49007482b7.webp"
+          />
+        </div>
+        <div class="empresa__entry-content">
+          <h3 class="empresa__entry-title">Visión</h3>
+
+          <ul class="empresa__entry-list">
+            <li class="empresa__entry-item">
+              Proveer a nuestros clientes nacionales e internacionales productos
+              de calidad.
+            </li>
+            <li class="empresa__entry-item">
+              Participar de manera sostenida y creciente en el desarrollo de la
+              industria alimentaria.
+            </li>
           </ul>
         </div>
       </div>

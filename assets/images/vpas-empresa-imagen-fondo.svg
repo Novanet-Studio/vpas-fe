@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="250"
+   height="250"
+   viewBox="0 0 66.145833 66.145833"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="vpas-empresa-imagen-fondo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0897757"
+     inkscape:cx="29.363839"
+     inkscape:cy="149.57206"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#1c2a35;stroke-width:2.01954;fill-opacity:1"
+       id="path234"
+       sodipodi:type="arc"
+       sodipodi:cx="31.75"
+       sodipodi:cy="31.75"
+       sodipodi:rx="31.75"
+       sodipodi:ry="31.75"
+       sodipodi:start="0"
+       sodipodi:end="6.2797909"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="M 63.5,31.75 A 31.75,31.75 0 0 1 31.776943,63.499989 31.75,31.75 0 0 1 4.5727927e-5,31.803886 31.75,31.75 0 0 1 31.669171,1.028878e-4 31.75,31.75 0 0 1 63.499817,31.642228" />
+    <path
+       style="fill:#789bba;fill-opacity:1;stroke-width:2.01954"
+       id="path234-3"
+       sodipodi:type="arc"
+       sodipodi:cx="34.395832"
+       sodipodi:cy="34.395832"
+       sodipodi:rx="31.75"
+       sodipodi:ry="31.75"
+       sodipodi:start="0"
+       sodipodi:end="6.2797909"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="M 66.145832,34.395832 A 31.75,31.75 0 0 1 34.422775,66.145821 31.75,31.75 0 0 1 2.6458778,34.449718 31.75,31.75 0 0 1 34.315003,2.6459349 31.75,31.75 0 0 1 66.145649,34.28806" />
+  </g>
+</svg>

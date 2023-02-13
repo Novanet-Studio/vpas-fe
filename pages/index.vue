@@ -198,41 +198,41 @@ try {
   articles.value = query.data.articulos.data;
   carrusel.value = query.data.carrusel.data.attributes.imagenes;
 } catch (err) {
-  console.error('An error occured while fetching home data! ', err);
+  console.error("An error occured while fetching home data! ", err);
 }
 
 const mensaje = `Proveemos los mercados <span class="mensaje__span">nacionales e internacionales</span> con productos  de calidad`;
 
 const iconos = [
   {
-    name: 'Icono Pargo',
-    image: '/vpas-icono-pargo.webp',
+    name: "Icono Pargo",
+    image: "/vpas-icono-pargo.webp",
   },
   {
-    name: 'Icono Cachama',
-    image: '/vpas-icono-cachama.webp',
+    name: "Icono Cachama",
+    image: "/vpas-icono-cachama.webp",
   },
   {
-    name: 'Icono Langosta',
-    image: '/vpas-icono-langosta.webp',
+    name: "Icono Langosta",
+    image: "/vpas-icono-langosta.webp",
   },
 ];
 
 const empresa = [
   {
-    titulo: '¿Quiénes somos?',
+    titulo: "¿Quiénes somos?",
     descripcion:
-      'Una empresa del sector alimentos que se especializa en el procesamiento y comercia-lización de pescados, mariscos, moluscosy demás especies marinas.',
+      "Una empresa del sector alimentos que se especializa en el procesamiento y comercia-lización de pescados, mariscos, moluscosy demás especies marinas.",
   },
   {
-    titulo: 'Misión',
+    titulo: "Misión",
     descripcion:
-      'Convertirnos en la empresa venezolana por excelencia en el procesamiento, comercialización y exportación de recursos hidrobiológicos.',
+      "Convertirnos en la empresa venezolana por excelencia en el procesamiento, comercialización y exportación de recursos hidrobiológicos.",
   },
   {
-    titulo: 'Visión',
+    titulo: "Visión",
     descripcion:
-      'Proveer a nuestros clientes nacionales e internacionales productos de calidad. Participar de manera sostenida y creciente en el desarrollo de la industria alimentaria.',
+      "Proveer a nuestros clientes nacionales e internacionales productos de calidad. Participar de manera sostenida y creciente en el desarrollo de la industria alimentaria.",
   },
 ];
 </script>

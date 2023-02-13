@@ -1,19 +1,11 @@
 <template>
   <div class="product">
-    <header class="product__header">
-      <div class="product__header-content">
-        <h2 class="product__header-title">Productos</h2>
-        <p class="product__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-          saepe. Et debitis quam, soluta explicabo facere voluptas quasi. Cum,
-          ut.
-        </p>
-      </div>
-      <div class="product__header-action">
-        <button class="btn">Más información</button>
-      </div>
-      <app-div class="app-div" inverted />
-    </header>
+    <app-hero
+      titulo="Productos"
+      descripcion="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, saepe. Et debitis quam, soluta explicabo facere voluptas quasi."
+      textoBoton="Más información"
+    />
+
     <div class="product__content">
       <aside class="p-aside">
         <accordion-list v-for="(category, index) in categories" :key="index">
@@ -27,13 +19,11 @@
                 <template #summary>{{
                   product.attributes.nombre_especie
                 }}</template>
-                <ul
-                  class="fish-list"
-                  v-for="(subespecie, subindex) in product.attributes
-                    .subespecie"
-                  :key="subindex"
-                >
+                <ul class="fish-list">
                   <li
+                    v-for="(subespecie, subindex) in product.attributes
+                      .subespecie"
+                    :key="subindex"
                     class="fish-item"
                     @click="handleSelectSubEspecie(product, subespecie)"
                   >
@@ -89,7 +79,6 @@
                 :src="presentation.attributes.url"
                 :alt="presentation.attributes.alternativeText"
               />
-              <!-- <h6 class="product-card__title">Filete</h6> -->
             </div>
           </div>
         </div>
@@ -103,6 +92,8 @@ const categories = ref<Project.CategoriesData[]>([]);
 const selected = ref<Project.ProductsData>();
 const subEspecie = ref<Project.SubEspecie>();
 const graphql = useStrapiGraphQL();
+
+const isActive = true;
 
 function handleSelectSubEspecie(
   product: Project.ProductsData,
@@ -119,7 +110,7 @@ function handleClick(subspecie: Project.SubEspecie) {
 try {
   const query = await graphql<Project.CategoriesRequest>(`
     query {
-      categorias {
+      categorias(sort: "id:asc") {
         data {
           attributes {
             nombre
@@ -168,166 +159,67 @@ try {
   selected.value = query.data.categorias.data[1].attributes.productos.data[0];
   subEspecie.value = selected.value.attributes.subespecie[0];
 } catch (error) {
-  console.log('An error occurred while fetching categories: ', error);
+  console.log("An error occurred while fetching categories: ", error);
 }
 </script>
 
 <style scoped>
-:global(:root) {
-  --acco-border-radius: 10px;
-  --acco-light: #eeeeee;
-  --acco-lightest: #ffffff;
-  --acco-dark: #9e9e9e;
-  --acco-darkest: #000000;
+.summary-text {
+  @apply text-white text-xl font-extrabold;
 }
 
-:deep(.accordion-list) {
-  width: 100%;
-  background: var(--acco-lightest);
-}
-
-:deep(.p-aside > div:nth-child(1) > details:nth-child(1)) {
-  @apply rounded-lg border border-[#767676];
-}
-
-:deep(.p-aside > div:nth-child(2) > details:nth-child(1)) {
-  @apply rounded-lg border border-[#767676] mt-8;
-}
-
-:deep(.p-aside > div:nth-child(3) > details:nth-child(1)) {
-  @apply rounded-lg border border-[#767676] mt-8;
-}
-
-:deep(.accordion-list .accordion-item) {
-  --content-height: 0px;
-  height: calc(var(--summary-height) + 26px);
-  /* overflow: hidden; */
-  transition: height 300ms ease-in-out;
-}
-
-:deep(
+:global(
     .p-aside > div:nth-child(1) > details:nth-child(1) > summary:nth-child(1)
   ) {
-  @apply bg-gunmetal text-white text-xl font-extrabold rounded-md;
+  @apply bg-gunmetal summary-text;
 }
 
-:deep(
+:global(
     .p-aside > div:nth-child(2) > details:nth-child(1) > summary:nth-child(1)
   ) {
-  @apply bg-bdazzled text-white text-xl font-extrabold rounded-md;
+  @apply bg-bdazzled summary-text;
 }
 
-:deep(
+:global(
     .p-aside > div:nth-child(3) > details:nth-child(1) > summary:nth-child(1)
   ) {
-  @apply bg-cerulean text-white text-xl font-extrabold rounded-md;
+  @apply bg-cerulean summary-text;
+}
+:global(.accordion-list .accordion-item > .accordion-item__summary) {
+  @apply p-3 cursor-pointer text-battleship  font-light text-base;
+}
+:global(.accordion-list .accordion-item > .accordion-item__summary:hover) {
+  @apply text-gunmetal font-semibold;
 }
 
-:deep(.accordion-list .accordion-item > .accordion-item__summary) {
-  @apply p-3 cursor-pointer text-[#767676] flex justify-between items-center font-light text-base transition-colors duration-300 ease-in-out;
-}
-
-:deep(.accordion-list .accordion-item > .accordion-item__summary:hover) {
-  @apply text-gunmetal text-opacity-80 transition-colors ease-in-out;
-}
-
-:deep(
-    .accordion-list
-      .accordion-item
-      > .accordion-item__summary
-      > .accordion-item__summary-icon
-  ) {
-  @apply transition-transform duration-300 ease-in-out;
-}
-
-:deep(
+:global(
     .accordion-list
       .accordion-item
       > .accordion-item__summary
       > .accordion-item__summary-icon::before
   ) {
-  content: '+';
-  line-height: 22px;
+  content: "+";
 }
-:deep(.accordion-list .accordion-item--open) {
-  height: calc(var(--summary-height) + var(--content-height) + 23px);
-  background: var(--acco-lightest);
-}
-:deep(
+
+:global(
     .accordion-list
       .accordion-item--open
       > .accordion-item__summary
       > .accordion-item__summary-icon::before
   ) {
-  content: '-';
-  line-height: 22px;
+  content: "-";
 }
 
-:deep(
+:global(
     .accordion-item__content
       > .accordion-list
       > .accordion-item--open
       > .accordion-item__summary
   ) {
-  @apply bg-[#c6c6c6];
-}
-
-:deep(
-    .accordion-item__content
-      > .accordion-list
-      > .accordion-item--open
-      > .accordion-item__summary
-      > .accordion-item__summary-title
-  ) {
-  @apply text-gunmetal font-bold;
-}
-
-:deep(
-    .accordion-item__content
-      > .accordion-list
-      > .accordion-item--open
-      > .accordion-item__content
-  ) {
-  @apply bg-[#e5e5e5] border-b border-b-gray-300;
-}
-
-:deep(.accordion-list .accordion-item--disabled > .accordion-item__summary) {
-  color: var(--acco-dark);
-  cursor: default;
-}
-:deep(
-    .accordion-list .accordion-item--disabled > .accordion-item__summary:hover
-  ) {
-  color: var(--acco-dark);
-}
-:deep(.accordion-list .accordion-item > .accordion-item__content) {
-  background-color: var(--acco-lightest);
-  border-top: none;
-}
-
-:deep(.accordion-item__content > .accordion-list > .accordion-item) {
-  @apply border-b;
-}
-
-:deep(.accordion-item__content > .accordion-list > .accordion-item:last-child) {
-  @apply rounded-b-2xl border-b-transparent;
-}
-
-:deep(
-    .accordion-item__content
-      > .accordion-list
-      > .accordion-item
-      > .accordion-item__summary
-      > .accordion-item__summary-icon::before
-  ) {
-  content: '';
-}
-
-.fish-list {
-  @apply mx-3;
+  @apply bg-silver text-gunmetal font-semibold;
 }
 
 .fish-item {
-  @apply p-2 pl-8 border-b border-b-[#898989] cursor-pointer;
+  @apply cursor-pointer border-b border-b-silver text-sm py-2 hyphens-none;
 }
 </style>
