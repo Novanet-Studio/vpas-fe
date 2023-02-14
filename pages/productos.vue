@@ -53,7 +53,7 @@
             {{ subespecie.nombre_subespecie }}
           </button>
         </div>
-        <nuxt-img
+        <nuxt-picture
           :src="subEspecie?.imagen.data.attributes.url"
           :alt="subEspecie?.imagen.data.attributes.alternativeText"
           class="product__main-image"
@@ -165,7 +165,7 @@ try {
 
 <style scoped>
 .summary-text {
-  @apply text-white text-xl font-extrabold;
+  @apply text-white text-base font-extrabold;
 }
 
 :global(
@@ -186,7 +186,7 @@ try {
   @apply bg-cerulean summary-text;
 }
 :global(.accordion-list .accordion-item > .accordion-item__summary) {
-  @apply p-3 cursor-pointer text-battleship  font-light text-base;
+  @apply p-3 cursor-pointer text-battleship  font-light text-sm;
 }
 :global(.accordion-list .accordion-item > .accordion-item__summary:hover) {
   @apply text-gunmetal font-semibold;
