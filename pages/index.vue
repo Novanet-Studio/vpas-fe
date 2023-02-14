@@ -108,7 +108,7 @@
         <div class="contacto__mapa">
           <nuxt-img
             class="contacto__mapa-imagen"
-            src="/vpas-mapa-venezuela.svg"
+            src="https://res.cloudinary.com/novanet-studio/image/upload/v1676380474/vpas/uploads/vpas_mapa_venezuela_e02a5a89f4.svg"
             alt="Mapa de venezuela"
           />
         </div>

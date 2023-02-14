@@ -20,13 +20,13 @@
         @click="toggleMenu"
       >
         <nuxt-link to="/" class="header__link">Inicio</nuxt-link>
-        <nuxt-link to="/empresa" class="header__link">Empresa</nuxt-link>
-        <nuxt-link to="/productos" class="header__link">Productos</nuxt-link>
-        <nuxt-link to="/especies" class="header__link"
+        <nuxt-link to="/" class="header__link">Empresa</nuxt-link>
+        <nuxt-link to="/" class="header__link">Productos</nuxt-link>
+        <nuxt-link to="/" class="header__link"
           >Especies en Venezuela</nuxt-link
         >
-        <nuxt-link to="/blog" class="header__link">Blog</nuxt-link>
-        <nuxt-link to="/contacto" class="header__link">Contacto</nuxt-link>
+        <nuxt-link to="/" class="header__link">Blog</nuxt-link>
+        <nuxt-link to="/" class="header__link">Contacto</nuxt-link>
       </nav>
     </div>
   </header>
