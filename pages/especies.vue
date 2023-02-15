@@ -1,22 +1,11 @@
 <template>
   <div class="especies">
-    <section class="main-notice">
-      <nuxt-img
-        class="main-notice__image"
-        src="/vpas-fondo-marino.webp"
-        alt="Notice image"
-      />
-      <div class="main-notice__content">
-        <div class="main-notice__wrapper">
-          <h2 class="main-notice__title">Especies en Venezuela</h2>
-          <p class="main-notice__description">
-            Lorem ipsum dolor sit amet consectetur.
-          </p>
-        </div>
-        <button class="btn btn--small btn--self-center">Click aquí</button>
-      </div>
-      <app-div class="app-div" inverted />
-    </section>
+    <app-highlight
+      titulo="Especies en Venezuela"
+      descripcion="Lorem ipsum dolor sit amet consectetur."
+      textoBoton="Más información"
+      imagen="https://res.cloudinary.com/novanet-studio/image/upload/v1676481165/vpas/uploads/vpas_bioma_marino_420d5fda84.webp"
+    />
     <section class="especies__info">
       <p class="especies__description">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
@@ -124,6 +113,6 @@ try {
   // Default select first category
   selected.value = categories.value[0];
 } catch (error) {
-  console.log('An error occurred while fetching categories: ', error);
+  console.log("An error occurred while fetching categories: ", error);
 }
 </script>

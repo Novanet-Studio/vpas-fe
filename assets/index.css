@@ -252,9 +252,6 @@
   @apply <sm:(text-base);
 }
 
-.swiper__slide {
-}
-
 .swiper__text {
   @apply absolute  text-center text-white hyphens-none 
   <sm:(top-[25%] text-sm px-6)
@@ -283,7 +280,7 @@
 }
 
 .app__hero {
-  @apply w-full flex flex-col relative px-6 bg-gradient-to-b from-gunmetal to-bdazzled bg-no-repeat 
+  @apply w-full flex flex-col relative px-6 app-hero-bg-gradient 
   <sm:(pt-8 pb-12)
   lg:(px-48 flex-row)
   xl:(pt-18 pb-26);
@@ -305,6 +302,43 @@
   @apply flex-1 flex justify-center items-center mt-8 md:mt-0;
 }
 
+.app-highlight {
+  @apply bg-highlightBg bg-no-repeat bg-top bg-center bg-cover relative px-42 pt-20 pb-24;
+}
+
+.app-highlight__wrapper {
+  @apply container mx-auto flex flex-wrap;
+}
+
+.app-highlight__image {
+  @apply block w-2/4
+}
+
+.app-highlight__content {
+  @apply w-2/4 flex flex-col gap-4 self-start text-white text-sm px-8  
+}
+
+.app-highlight__title {
+  @apply w-full heading-2 text-white border-t-1 border-t-platinum pt-4;
+}
+
+.btn {
+  @apply max-w-max text-white hyphens-none bg-cerulean rounded-full px-12 py-4 ;
+}
+
+.btn--small {
+  @apply  px-4 py-2;
+}
+
+.btn--bdazzled {
+  @apply bg-bdazzled;
+}
+
+.btn--self-center {
+  @apply self-center;
+}
+
+
 /* --- Transitions ---  */
 
 .fade-enter-active {
@@ -318,7 +352,7 @@
 /* --- Inicio ---  */
 
 .especies {
-  @apply container mx-auto;
+  @apply ;
 }
 
 .especies__lista {
@@ -551,9 +585,7 @@
   @apply absolute left-0 bottom-0 z-20;
 }
 
-.btn {
-  @apply bg-cerulean px-12 py-4 text-white rounded-full;
-}
+
 
 .product__title {
   @apply heading-1 mb-4;
@@ -640,39 +672,6 @@
 }
 
 /* Especies en Venezuela */
-/* TODO: Replace bg-footerBg by the right bg */
-.main-notice {
-  @apply relative flex flex-col items-center justify-between text-white text-sm bg-footerBg bg-no-repeat bg-center bg-cover
-   md:(h-[39.68rem] px-48 pb-21 flex-row);
-}
-
-.main-notice__image {
-  @apply bg-[#d9d9d9] w-11/12 mt-8 h-52 rounded-tl-3xl rounded-br-2xl md:(h-[23.75rem] w-[39.6rem] mt-0);
-}
-
-.main-notice__content {
-  @apply flex flex-col self-start my-12 px-8 justify-between lg:(px-0 mt-24 h-72 w-[394px]);
-}
-
-.btn--small {
-  @apply h-9 flex items-center justify-center;
-}
-
-.main-notice__wrapper {
-  @apply my-4;
-}
-
-.main-notice__title {
-  @apply heading-2 border-t-2 border-t-gray-500 pt-8 text-white w-full;
-}
-
-.btn--bdazzled {
-  @apply bg-bdazzled;
-}
-
-.btn--self-center {
-  @apply self-center;
-}
 
 .especies__info {
   @apply flex flex-col px-8 mt-4 md:(flex-row px-48 mt-12 gap-32);
