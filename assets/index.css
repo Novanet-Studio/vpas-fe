@@ -303,7 +303,9 @@
 }
 
 .app-highlight {
-  @apply bg-highlightBg bg-no-repeat bg-top bg-center bg-cover relative px-42 pt-20 pb-24;
+  @apply app-hero-bg-gradient bg-no-repeat bg-top bg-center bg-cover relative px-6
+  <sm:(pt-8 pb-12)
+  xl:(px-42 pt-20 pb-24);
 }
 
 .app-highlight__wrapper {
@@ -311,23 +313,36 @@
 }
 
 .app-highlight__image {
-  @apply block w-2/4
+  @apply block 
+  <sm:(w-full)
+  xl:(w-2/4);
+}
+
+.app-highlight__image img {
+  @apply w-full;
 }
 
 .app-highlight__content {
-  @apply w-2/4 flex flex-col gap-4 self-start text-white text-sm px-8  
+  @apply flex flex-col gap-4 self-start text-white text-sm
+  
+  xl:(w-2/4 px-8);
 }
 
 .app-highlight__title {
-  @apply w-full heading-2 text-white border-t-1 border-t-platinum pt-4;
+  @apply w-full heading-2 text-white border-t-1 border-t-platinum pt-4
+  <sm:(border-none);
+}
+
+.app-div {
+  @apply absolute left-0 bottom-0 z-20;
 }
 
 .btn {
-  @apply max-w-max text-white hyphens-none bg-cerulean rounded-full px-12 py-4 ;
+  @apply max-w-max text-white hyphens-none bg-cerulean rounded-full px-12 py-4;
 }
 
 .btn--small {
-  @apply  px-4 py-2;
+  @apply px-4 py-2;
 }
 
 .btn--bdazzled {
@@ -337,7 +352,6 @@
 .btn--self-center {
   @apply self-center;
 }
-
 
 /* --- Transitions ---  */
 
@@ -352,7 +366,7 @@
 /* --- Inicio ---  */
 
 .especies {
-  @apply ;
+  @apply;
 }
 
 .especies__lista {
@@ -580,12 +594,6 @@
 .product__header-action {
   @apply flex-1 flex justify-center items-center mt-8 md:mt-0;
 }
-
-.app-div {
-  @apply absolute left-0 bottom-0 z-20;
-}
-
-
 
 .product__title {
   @apply heading-1 mb-4;
