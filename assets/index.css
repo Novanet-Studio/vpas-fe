@@ -365,8 +365,8 @@
 
 /* --- Inicio ---  */
 
-.especies {
-  @apply;
+.especies__info {
+  @apply py-16;
 }
 
 .especies__lista {
