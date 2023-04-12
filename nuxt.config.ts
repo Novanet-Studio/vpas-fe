@@ -2,7 +2,7 @@ import pwa from "./pwa";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  ssr: false,
+  target: "static",
   app: {
     head: {
       meta: [
@@ -49,6 +49,14 @@ export default defineNuxtConfig({
     "@kevinmarrec/nuxt-pwa",
     "nuxt-windicss",
   ],
+
+  runtimeConfig: {
+    public: {
+      strapi: {
+        url: process.env.STRAPI_URL || "http://localhost:1337",
+      },     
+    },
+  },
 
   css: [
     "~/assets/index.css",
