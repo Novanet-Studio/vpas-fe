@@ -76,10 +76,12 @@ export default defineNuxtConfig({
     },
   },
 
-  strapi: {
-    url: process.env.STRAPI_URL || "http://localhost:1337",
+  router: {
+    options: {
+      linkActiveClass: 'text-black font-bold',
+    },
   },
-
+  
   image: {
     dir: "assets/images",
     cloudinary: {

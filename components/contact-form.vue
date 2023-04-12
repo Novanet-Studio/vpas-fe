@@ -159,14 +159,14 @@ const onSubmit = handleSubmit(async (data) => {
 }
 
 .form-input {
-  @apply w-full rounded-tl-lg rounded-br-lg bg-cerulean bg-opacity-20 border border-cerulean placeholder-cerulean mb-8 p-4 h-9;
+  @apply w-full rounded-lg rounded-br-lg bg-white bg-opacity-80 border border-cerulean placeholder-silver mb-8 p-4 h-9;
 }
 
 .form-text-area {
-  @apply w-full list-none mb-8 p-4 rounded-tl-lg rounded-br-lg bg-cerulean bg-opacity-20 border border-cerulean placeholder-cerulean;
+  @apply w-full list-none mb-8 p-4 rounded-lg bg-white bg-opacity-80 border border-cerulean placeholder-silver;
 }
 
 .form-btn {
-  @apply px-8 py-2 text-white bg-cerulean w-48 rounded-tl-lg rounded-br-lg;
+  @apply px-8 py-2 text-white bg-gunmetal w-48 rounded-lg;
 }
 </style>

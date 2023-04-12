@@ -1,23 +1,21 @@
 <template>
   <div class="article">
-    <header>
-      <nuxt-img
-        :src="article?.attributes.imagen.data.attributes.url"
-        :alt="article?.attributes.imagen.data.attributes.alternativeText"
-        class="article__image"
-      />
-      <h2 class="article__title">{{ article?.attributes.titulo }}</h2>
-    </header>
-    <div v-html="markdown.render(article?.attributes.descripcion)"></div>
+    <nuxt-img
+      :src="article?.attributes.imagen.data.attributes.url"
+      :alt="article?.attributes.imagen.data.attributes.alternativeText"
+      class="article__image"
+    />
+    <h2 class="article__title">{{ article?.attributes.titulo }}</h2>
+    <div class="article__description" v-html="markdown.render(article?.attributes.descripcion)"></div>
   </div>
 </template>
 <script lang="ts" setup>
 definePageMeta({
-  layout: 'article',
+  layout: "article",
 });
 
 // @ts-ignore
-import MarkdownIt from 'markdown-it';
+import MarkdownIt from "markdown-it";
 const markdown = new MarkdownIt();
 
 const article = ref<Project.ArticlesData>();
@@ -55,6 +53,6 @@ try {
 
   article.value = query.data.articulos.data[0];
 } catch (error) {
-  console.log('An error ocurred while fetching article: ', error);
+  console.log("An error ocurred while fetching article: ", error);
 }
 </script>

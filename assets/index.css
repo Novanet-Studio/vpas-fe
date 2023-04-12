@@ -138,12 +138,13 @@
 
 .header__logo {
   /* @apply w-2/5; */
-  @apply <sm:( flex justify-between ml-4 py-4);
+  @apply <sm:( flex justify-between ml-4 py-4)
+  lg:(w);
 }
 
 .header__logo-image {
-  /* @apply w-76; */
-  @apply <sm:(w-45);
+  @apply <sm:(w-54)
+  lg:(w-76);
 }
 
 .header__nav {
@@ -242,6 +243,14 @@
   xl:(h-auto mb-4 );
 }
 
+.swiper-slide {
+  @apply <sm:(absolute max-w-full overflow-hidden);
+}
+
+.swiper-slide img {
+  @apply <sm:(relative max-w-[150%] -left-[25%] !important);
+}
+
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
   @apply text-white;
@@ -254,7 +263,7 @@
 
 .swiper__text {
   @apply absolute  text-center text-white hyphens-none 
-  <sm:(top-[25%] text-sm px-6)
+  <sm:(top-[25%] text-base px-6)
   xl:(top-[40%] text-3xl px-16 );
 }
 
@@ -283,11 +292,11 @@
   @apply w-full flex flex-col relative px-6 app-hero-bg-gradient 
   <sm:(pt-8 pb-12)
   lg:(px-48 flex-row)
-  xl:(pt-18 pb-26);
+  xl:(px-64 pt-28 pb-48);
 }
 
 .app__hero-content {
-  @apply flex-1;
+  @apply w-2/3;
 }
 
 .app__hero-title {
@@ -299,7 +308,7 @@
 }
 
 .app__hero-action {
-  @apply flex-1 flex justify-center items-center mt-8 md:mt-0;
+  @apply w-1/3 flex justify-center items-center mt-8 md:mt-0;
 }
 
 .app-highlight {
@@ -365,12 +374,16 @@
 
 /* --- Inicio ---  */
 
+.especies {
+  @apply;
+}
+
 .especies__info {
   @apply py-16;
 }
 
 .especies__lista {
-  @apply flex flex-col items-center md:(flex-row flex-wrap);
+  @apply container mx-auto flex flex-col items-center md:(flex-row flex-wrap);
 }
 
 .especies__item {
@@ -385,7 +398,7 @@
 }
 
 .especies__link {
-  @apply block w-full text-center text-cerulean text-xs pt-2;
+  @apply block w-full text-center text-cerulean text-xs pt-2 font-normal !important;
 }
 
 .mensaje {
@@ -421,7 +434,7 @@
 }
 
 .empresa__lista {
-  @apply flex flex-col md:(flex-row flex-wrap mx-12 justify-between);
+  @apply container mx-auto flex flex-col md:(flex-row flex-wrap justify-between);
 }
 
 .empresa__item {
@@ -493,7 +506,7 @@
 }
 
 .noticias__item-titulo {
-  @apply heading-5 text-left text-bdazzled !border-b-2 border-gray-400 pt-6 pb-4;
+  @apply heading-5 text-left text-bdazzled !border-b-1 border-gray-300 pt-6 pb-4 font-semibold !important;
 }
 
 .contacto {
@@ -540,7 +553,7 @@
 /* Empresa */
 
 .empresa__section {
-  @apply flex flex-col my-8 gap-12 px-6 lg:(my-28 gap-24 px-48);
+  @apply flex flex-col mx-24 my-8 gap-12 px-6 lg:(my-28 gap-24 px-48);
 }
 
 .empresa__entry {
@@ -613,11 +626,11 @@
 }
 
 .product__btn {
-  @apply flex items-center justify-center text-sm text-battleship text-center align-middle bg-platinum px-4 py-2;
+  @apply flex items-center justify-center text-sm text-bdazzled text-center align-middle rounded-md border border-bdazzled px-4 py-2;
 }
 
 .product__btn--active {
-  @apply text-white bg-battleship;
+  @apply text-white bg-bdazzled;
 }
 
 /* tl = top left */
@@ -682,7 +695,7 @@
 /* Especies en Venezuela */
 
 .especies__info {
-  @apply flex flex-col px-8 mt-4 md:(flex-row px-48 mt-12 gap-32);
+  @apply container mx-auto flex flex-col mt-4 md:(flex-row mt-12 gap-32);
 }
 
 .especies__info > .especies__description {
@@ -694,7 +707,7 @@
 }
 
 .especies__content {
-  @apply pt-6 px-6 lg:(px-48 pt-8);
+  @apply container mx-auto pt-6 lg:(pt-8);
 }
 
 .especies__content-header {
@@ -702,11 +715,11 @@
 }
 
 .especies__item-link {
-  @apply heading-4 text-center text-[#898989] md:(heading-3 align-middle border-r-3 border-r-gray-400 pr-4 last:border-none);
+  @apply text-2xl text-center text-[#898989] md:(align-middle border-r-1 border-r-gray-400 pr-4 last:border-none);
 }
 
 .especies__item-link--active {
-  @apply text-bdazzled;
+  @apply font-bold  text-bdazzled;
 }
 
 .especies__cards-wrapper,
@@ -716,11 +729,19 @@
 
 /* Blog */
 .blog__content {
-  @apply px-8 md:px-48;
+  @apply container mx-auto;
+}
+
+.article__wrapper {
+  @apply container mx-auto grid gap-14 md:(grid-cols-[70%,30%] my-24);
+}
+
+.aside {
+  @apply flex flex-col gap-8 md:(pl-8);
 }
 
 .article {
-  @apply md:w-[680px];
+  @apply ;
 }
 
 .article__image {
@@ -728,5 +749,11 @@
 }
 
 .article__title {
-  @apply my-4 heading-2;
+  @apply mt-8 mb-4 heading-1;
 }
+
+.article__description {
+  @apply text-xl
+}
+
+
