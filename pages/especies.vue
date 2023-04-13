@@ -64,7 +64,7 @@ function handleSelectCategory(category: Project.CategoriesData) {
 try {
   const query = await graphql<Project.CategoriesRequest>(`
     query {
-      categorias {
+      categorias(sort: "id:asc")  {
         data {
           attributes {
             nombre

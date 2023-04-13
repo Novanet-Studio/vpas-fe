@@ -131,16 +131,13 @@
 }
 
 .header__container {
-  /* @apply container mx-auto my-6 flex flex-wrap content-center h-28; */
-  @apply container mx-auto 
-  @md:(px-8)
-  md:(flex justify-between py-8);
+  @apply container mx-auto   
+  md:(flex justify-between px-8 py-8)
 }
 
 .header__logo {
   /* @apply w-2/5; */
   @apply <sm:( flex justify-between ml-4 py-4)
-  lg:(w);
 }
 
 .header__logo-image {
@@ -170,7 +167,7 @@
   @apply flex-col-center text-sm font-semibold text-bdazzled
   <sm:( w-full text-xs p-3)
    md:(text-xs ml-6 p-0)
-   xl:(p-4);
+   xl:(text-sm p-4);
 }
 
 .footer {
@@ -603,7 +600,7 @@
 }
 
 .empresa__entry-image-container {
-  @apply flex-col-center w-[250px] h-[250px] bg-empresaRoundBg bg-no-repeat 
+  @apply flex-col-center w-63 h-63 bg-empresaRoundBg bg-no-repeat 
   <xl:(w-full bg-center)
   xl:( bg-left-top);
 }
