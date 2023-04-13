@@ -17,7 +17,7 @@
         <div class="empresa__entry-content">
           <h3 class="empresa__entry-title">¿Quienes somos?</h3>
 
-          <p class="empresa__section-content">
+          <p>
             Una empresa del sector alimentos que se especializa en el
             procesamiento y comercialización de pescados, mariscos, moluscos y
             demás especies marinas. Desde nuestra fundación, en el año 2011, nos

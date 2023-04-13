@@ -133,7 +133,8 @@
 .header__container {
   /* @apply container mx-auto my-6 flex flex-wrap content-center h-28; */
   @apply container mx-auto 
-  xl:(flex justify-between p-8);
+  @md:(px-8)
+  md:(flex justify-between py-8);
 }
 
 .header__logo {
@@ -168,57 +169,69 @@
 .header__link {
   @apply flex-col-center text-sm font-semibold text-bdazzled
   <sm:( w-full text-xs p-3)
-   md:(ml-12 p-0)
+   md:(text-xs ml-6 p-0)
    xl:(p-4);
 }
 
 .footer {
   @apply relative flex flex-col justify-center text-white text-sm bg-footerBg bg-no-repeat bg-center bg-cover
-  <sm:(h-68)
+  <sm:(h-76)
+  md:(h-60 pt-10)
   xl:(h-72 pt-21);
 }
 
 .footer__container {
-  @apply container mx-auto flex flex-wrap flex-col md:flex-row;
+  @apply container mx-auto flex flex-wrap flex-col
+  md:(flex-row px-4);
 }
 
 .footer__brand {
-  @apply flex flex-wrap flex-col items-center 
-  md:(flex-row w-2/3);
+  @apply flex flex-wrap flex-col 
+  <sm:(items-center)
+  @md:(gap-4)
+  md:(w-2/3)
+  xl:(flex-row);
 }
 
 .footer__logo {
   @apply filter-to-white
   <sm:(w-16)
-  xl:(w-13);
+  md:(w-13);
 }
 
 .footer__legal {
   @apply flex-col-center py-3 
   <sm:(text-xs)
-  md:(pl-8 py-0);
+  md:(p-0)
+  xl:(pl-8 py-0);
 }
 
 .footer__rrss {
-  @apply flex md:pl-8;
+  @apply flex
+  md:(p-0) 
+  xl:(pl-8);
 }
 
 .footer__link {
-  @apply flex-col-center pl-4;
+  @apply flex-col-center pl-4
+  @md:(pr-4 pl-0);
 }
 
 .footer__developer {
   @apply flex flex-wrap justify-center mt-4 
   <sm:(pt-4 text-xs)
-  md:(w-1/3 justify-end mt-0);
+  md:(w-1/3 mt-0)
+  xl:(justify-end);
 }
 
 .footer__developer-text {
-  @apply flex-col-center;
+  @apply flex-col-center
+  md:(mt-9);
 }
 
 .footer__developer-container {
-  @apply flex-col-center;
+  @apply flex-col-center
+  md:(mt-9);
 }
 
 .footer__developer-logo {
@@ -268,11 +281,13 @@
 }
 
 .app__div-footer {
-  @apply absolute top-0;
+  @apply absolute top-0
+  @md:(-top-1);
 }
 
 .app__div-slider {
-  @apply absolute bottom-0 transform rotate-180 z-20;
+  @apply absolute bottom-0 transform rotate-180 z-20
+  @md:(-bottom-1);
 }
 
 .app__separator-top {
@@ -289,14 +304,14 @@
 }
 
 .app__hero {
-  @apply w-full flex flex-col relative px-6 app-hero-bg-gradient 
-  <sm:(pt-8 pb-12)
-  lg:(px-48 flex-row)
+  @apply w-full flex relative app-hero-bg-gradient 
+  <sm:(flex-col px-6 pt-8 pb-12)
+  md:(px-12 pt-10 pb-20)
   xl:(px-64 pt-28 pb-48);
 }
 
 .app__hero-content {
-  @apply w-2/3;
+  @apply md:(w-2/3);
 }
 
 .app__hero-title {
@@ -308,13 +323,20 @@
 }
 
 .app__hero-action {
-  @apply w-1/3 flex justify-center items-center mt-8 md:mt-0;
+  @apply mt-8 
+  <sm:( )
+  md:(w-1/3 flex justify-center items-center mt-0);
 }
 
 .app-highlight {
   @apply app-hero-bg-gradient bg-no-repeat bg-top bg-center bg-cover relative px-6
   <sm:(pt-8 pb-12)
+  md:(px-12 pt-10 pb-20)
   xl:(px-42 pt-20 pb-24);
+}
+
+.app-highlight__description {
+  @apply md:(hidden)
 }
 
 .app-highlight__wrapper {
@@ -332,9 +354,8 @@
 }
 
 .app-highlight__content {
-  @apply flex flex-col gap-4 self-start text-white text-sm
-  
-  xl:(w-2/4 px-8);
+  @apply flex flex-col gap-4 self-start text-white text-sm  
+  md:(w-1/2 pl-6);
 }
 
 .app-highlight__title {
@@ -383,12 +404,15 @@
 }
 
 .especies__lista {
-  @apply container mx-auto flex flex-col items-center md:(flex-row flex-wrap);
+  @apply container mx-auto flex 
+  <sm:(flex-col items-center)
+  @md:(pt-8 px-12 ) 
+  md:(flex-row flex-wrap);
 }
 
 .especies__item {
   @apply <sm:(pt-6 pb-3)
-  lg:(w-1/3 flex-col-center items-center);
+  md:(w-1/3 flex-col-center items-center);
 }
 
 .especies__titulo {
@@ -402,14 +426,16 @@
 }
 
 .mensaje {
-  @apply heading-2 text-center px-6 
+  @apply heading-2 text-center px-6 text-gunmetal font-black hyphens-none
   <sm:(py-4)
-  md:(text-gunmetal font-black hyphens-none px-48 py-18);
+  md:( px-12 py-16)
+  xl:( px-48 py-18);
 }
 
 .mensaje__text {
   @apply hyphens-none
   <sm:(text-xl py-4)
+  md:(py-8)
   xl:(py-18);
 }
 
@@ -490,7 +516,10 @@
 }
 
 .noticias__lista {
-  @apply flex flex-col md:(flex-row gap-24 mx-12);
+  @apply flex 
+  <sm:(flex-col) 
+  md:(flex-row ) 
+  xl:(gap-24);
 }
 
 .noticias__item {
@@ -510,8 +539,10 @@
 }
 
 .contacto {
-  @apply container mx-auto px-4 
-  md:px-16;
+  @apply container mx-auto 
+  <sm:(px-4) 
+  @md:(pb-6)
+  md:(px-6);
 }
 
 .contacto__titulo {
@@ -519,11 +550,15 @@
 }
 
 .contacto__contenedor {
-  @apply flex flex-col gap-4 md:(flex-row);
+  @apply flex 
+  <sm:(flex-col gap-4)
+  md:(flex-row);
 }
 
 .contacto__mapa {
-  @apply mt-8 flex-1 flex items-center justify-center xl:mt-0;
+  @apply flex flex-1 items-center justify-center
+  <sm:(mt-8) 
+  md:(-mt-18);
 }
 
 .contacto__mapa-imagen {
@@ -535,7 +570,10 @@
 }
 
 .contacto__informacion-contenedor {
-  @apply flex flex-col mt-8 gap-4 md:(flex-row gap-8 mt-24);
+  @apply flex flex-col
+  <sm:(mt-8 gap-2)
+  md:(mt-4 gap-4)
+  xl:(flex-row gap-8 mt-24);
 }
 
 .contacto__texto {
@@ -553,17 +591,20 @@
 /* Empresa */
 
 .empresa__section {
-  @apply flex flex-col mx-24 my-8 gap-12 px-6 lg:(my-28 gap-24 px-48);
+  @apply flex flex-col 
+  <sm:(my-12 )
+  md:(mx-8 py-6)
+  xl:(my-28 gap-24 px-48);
 }
 
 .empresa__entry {
-  @apply flex
-  <sm:(flex-wrap);
+  @apply flex flex-wrap
+  <xl:( mb-12);
 }
 
 .empresa__entry-image-container {
   @apply flex-col-center w-[250px] h-[250px] bg-empresaRoundBg bg-no-repeat 
-  <sm:(w-full bg-center)
+  <xl:(w-full bg-center)
   xl:( bg-left-top);
 }
 
@@ -580,6 +621,7 @@
 .empresa__entry-title {
   @apply h-10 heading-3 text-gunmetal border-b-1 border-battleship mb-2
   <sm:(flex justify-center mt-4)
+  @md:(flex justify-center)
   xl:(max-w-max);
 }
 
@@ -609,12 +651,15 @@
 }
 
 .product__title {
-  @apply heading-1 mb-4;
+  @apply mb-4
+  <sm:(heading-2)
+  md:(heading-1);
 }
 
 .product__content {
   @apply flex flex-col gap-10 px-6 mt-8 
-  md:(flex-row gap-8 px-48);
+  md:(flex-row gap-8)
+  xl:(px-48);
 }
 
 .product__main {
@@ -626,7 +671,8 @@
 }
 
 .product__btn {
-  @apply flex items-center justify-center text-sm text-bdazzled text-center align-middle rounded-md border border-bdazzled px-4 py-2;
+  @apply flex items-center justify-center text-sm text-bdazzled text-center align-middle rounded-md border border-bdazzled px-4 py-2
+  <sm:(text-xs p-3);
 }
 
 .product__btn--active {
@@ -689,17 +735,26 @@
 
 /* Product Aside */
 .p-aside {
-  @apply flex-basis-[20%];
+  @apply flex-basis-[20%]
+  @md:(flex-basis-[30%]);
 }
 
 /* Especies en Venezuela */
 
+.especies {
+  @apply
+}
+
 .especies__info {
-  @apply container mx-auto flex flex-col mt-4 md:(flex-row mt-12 gap-32);
+  @apply container mx-auto flex flex-col mt-4
+  @md:(px-8)
+  md:(flex-row)
+  xl:(mt-12 gap-32);
 }
 
 .especies__info > .especies__description {
-  @apply md:flex-basis-[75%] text-gunmetal text-lg;
+  @apply 
+  md:(flex-basis-[75%] text-gunmetal text-lg);
 }
 
 .especies__info > .btn {
@@ -707,15 +762,21 @@
 }
 
 .especies__content {
-  @apply container mx-auto pt-6 lg:(pt-8);
+  @apply container mx-auto pt-6 
+  @md:(px-8 !important)
+  md:(pt-8);
 }
 
 .especies__content-header {
-  @apply border-t border-t-[#767676] pt-8 flex flex-col md:(flex-row pt-12) gap-4;
+  @apply border-t border-t-[#767676] pt-8 flex flex-col 
+  <sm:()
+  md:(flex-row pt-12) gap-4;
 }
 
 .especies__item-link {
-  @apply text-2xl text-center text-[#898989] md:(align-middle border-r-1 border-r-gray-400 pr-4 last:border-none);
+  @apply text-2xl text-center text-[#898989]
+  <sm:(text-left)
+   md:(align-middle border-r-1 border-r-gray-400 pr-4 last:border-none);
 }
 
 .especies__item-link--active {
@@ -724,24 +785,33 @@
 
 .especies__cards-wrapper,
 .blog__cards-wrapper {
-  @apply grid mb-10 mt-10 md:(grid-cols-3 gap-12 mt-12 mb-24);
+  @apply grid mb-10 mt-10 
+  <sm:(grid-cols-1)
+  md:(grid-cols-3)
+  xl:(gap-12 mt-12 mb-24);
 }
 
 /* Blog */
 .blog__content {
-  @apply container mx-auto;
+  @apply container mx-auto
+  ;
 }
 
 .article__wrapper {
-  @apply container mx-auto grid gap-14 md:(grid-cols-[70%,30%] my-24);
+  @apply container mx-auto grid gap-14
+  <sm:(px-4)
+  md:(my-24)
+  xl:(grid-cols-[70%,30%]);
 }
 
 .aside {
-  @apply flex flex-col gap-8 md:(pl-8);
+  @apply flex flex-col gap-8
+  @md:(flex-row grid-cols-3 px-8)
+  xl:(pl-8);
 }
 
 .article {
-  @apply ;
+  @apply @md:(px-8);
 }
 
 .article__image {

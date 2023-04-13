@@ -16,11 +16,14 @@ defineProps<Props>();
 
 <style scoped>
 .app-card {
-  @apply w-80;
+  @apply w-80
+  <sm:(w-full px-4 pb-4)
+  @md:(w-full px-2);
 }
 
 .app-card__image {
-  @apply rounded-lg h-44;
+  @apply rounded-lg 
+  xl:(h-44);
 }
 
 .app-card__title {

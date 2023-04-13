@@ -49,7 +49,7 @@ try {
 
 <style scoped>
 .contact-section {
-  @apply px-10 lg:px-36;
+  @apply px-4 xl:px-36;
 }
 
 .contact-section__header {
