@@ -1,130 +1,130 @@
 // This .d.ts file must contain the project type declaration
 declare namespace Project {
   // API Request
-  type IndexRequest = {
+  interface IndexRequest {
     data: IndexRequestData;
-  };
+  }
 
-  type ArticlesRequest = {
+  interface ArticlesRequest {
     data: ArticlesRequestData;
-  };
+  }
 
-  type ProductsRequest = {
+  interface ProductsRequest {
     data: ProductsRequestData;
-  };
+  }
 
-  type CategoriesRequest = {
+  interface CategoriesRequest {
     data: CategoriesRequestData;
-  };
+  }
 
   // API Request Data
-  type IndexRequestData = {
+  interface IndexRequestData {
     categorias: Categories;
     articulos: Articles;
     carrusel: Carousel;
-  };
+  }
 
-  type ArticlesRequestData = {
+  interface ArticlesRequestData {
     articulos: Articles;
-  };
+  }
 
-  type ProductsRequestData = {
+  interface ProductsRequestData {
     productos: Products;
-  };
+  }
 
-  type CategoriesRequestData = {
+  interface CategoriesRequestData {
     categorias: Categories;
-  };
+  }
 
   // API content
-  type Articles = {
+  interface Articles {
     data: ArticlesData[];
-  };
+  }
 
-  type Products = {
+  interface Products {
     data: ProductsData[];
-  };
+  }
 
-  type Categories = {
+  interface Categories {
     data: CategoriesData[];
-  };
+  }
 
-  type Carousel = {
+  interface Carousel {
     data: CarouselData;
-  };
+  }
 
   // API Data
-  type ArticlesData = {
+  interface ArticlesData {
     attributes: ArticleAttributes;
-  };
+  }
 
-  type ProductsData = {
+  interface ProductsData {
     attributes: ProductAttributes;
-  };
+  }
 
-  type CategoriesData = {
+  interface CategoriesData {
     attributes: CategoryAttributes;
-  };
+  }
 
-  type CarouselData = {
+  interface CarouselData {
     attributes: CarouselAttributes;
-  };
+  }
 
   // Data Attributes
-  type ArticleAttributes = {
+  interface ArticleAttributes {
     titulo: string;
     descripcion: string;
     slug: string;
     imagen: Image;
-  };
+  }
 
-  type ProductAttributes = {
+  interface ProductAttributes {
     nombre_especie: string;
     subespecie: SubEspecie[];
-  };
+  }
 
-  type CategoryAttributes = {
+  interface CategoryAttributes {
     nombre: string;
     link: string;
     imagen: Image;
     productos: Products;
-  };
+  }
 
-  type CarouselAttributes = {
+  interface CarouselAttributes {
     nombre: string;
     imagenes: CarouselImages[];
-  };
+  }
 
-  type CarouselImages = {
+  interface CarouselImages {
     texto: string;
     imagen: Image;
-  };
+  }
 
-  type SubEspecie = {
+  interface SubEspecie {
     nombre_subespecie: string;
     nombre_ingles: string;
     nombre_tecnico: string;
     presentacion: ImageAlt;
     imagen: Image;
-  };
+  }
 
   // Others
-  type Image = {
+  interface Image {
     data: ImageData;
-  };
+  }
 
-  type ImageAlt = {
+  interface ImageAlt {
     data: ImageData[];
-  };
+  }
 
-  type ImageData = {
+  interface ImageData {
     id: string;
     attributes: ImageAttributes;
-  };
+  }
 
-  type ImageAttributes = {
+  interface ImageAttributes {
     name: string;
     url: string;
     alternativeText: string;
-  };
+  }
 }
