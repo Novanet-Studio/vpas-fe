@@ -1,3 +1,6 @@
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "url";
+import VueI18nVitePlugin from "@intlify/unplugin-vue-i18n/vite";
 import pwa from "./pwa";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -54,7 +57,7 @@ export default defineNuxtConfig({
     public: {
       strapi: {
         url: process.env.STRAPI_URL || "http://localhost:1337",
-      },     
+      },
     },
   },
 
@@ -76,12 +79,22 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    plugins: [
+      VueI18nVitePlugin({
+        include: [
+          resolve(dirname(fileURLToPath(import.meta.url)), "./locales/*.json"),
+        ],
+      }),
+    ],
+  },
+
   router: {
     options: {
-      linkActiveClass: 'text-black font-bold',
+      linkActiveClass: "text-black font-bold",
     },
   },
-  
+
   image: {
     dir: "assets/images",
     cloudinary: {

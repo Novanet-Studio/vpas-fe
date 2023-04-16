@@ -1,0 +1,22 @@
+{
+  "enterprise": {
+    "title": "Empresa",
+    "description": "Somos una organización del sector de alimentos especializada en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas",
+    "btn-text": "Más información",
+    "about": {
+      "title": "¿Quienes somos?",
+      "content": "Una empresa del sector alimentos que se especializa en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas. Desde nuestra fundación, en el año 2011, nos hemos dedicado a crecer de forma integral, para proveer los mercados nacionales e internacionales con productos de calidad. Contamos con cuatro plantas de procesamiento industrial en Venezuela, con más de 200 trabajadores, conformado por profesionales, técnicos y personal especializado que labora en nuestras líneas de producción, control de calidad y comercialización. Acopiamos, procesamos y comercializamos nuestros productos con estrictos controles de calidad, basados en principios de sustentabilidad."
+    },
+    "mission": {
+      "title": "Misión",
+      "item-1": "Convertirnos en la empresa venezolana por excelencia en el procesamiento, comercialización y exportación de recursos hidrobiológicos.",
+      "item-2": "Consolidar a Grupo V.P.A.S. C.A., en nuestros mercados cautivos y ampliar nuestra participación a nivel global.",
+      "item-3": "Ser una fuente importante de empleo y seguir aplicando tecnología de punta en nuestros procesos."
+    },
+    "vision": {
+      "title": "Visión",
+      "item-1": "Proveer a nuestros clientes nacionales e internacionales productos de calidad.",
+      "item-2": "Participar de manera sostenida y creciente en el desarrollo de la industria alimentaria."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "enterprise": {
+    "title": "Company",
+    "description": "We are a food sector organization specialized in the processing and commercialization of fish, seafood, mollusks, and other marine species.",
+    "btn-text": "More information",
+    "about": {
+      "title": "Who are we?",
+      "content": "A company in the food sector that specializes in the processing and marketing of fish, shellfish, mollusks and other marine species. Since our foundation, in 2011, we have been dedicated to grow in an integral way, to provide national and international markets with quality products. We have four industrial processing plants in Venezuela, with more than 200 workers, made up of professionals, technicians and specialized personnel who work in our production lines, quality control and marketing. We collect, process and commercialize our products with strict quality controls, based on sustainability principles."
+    },
+    "mission": {
+      "title": "Mission",
+      "item-1": "To become the Venezuelan company par excellence in the processing, commercialization and export of hydrobiological resources.",
+      "item-2": "Consolidate Grupo V.P.A.S. C.A. in our captive markets and expand our participation globally.",
+      "item-3": "To be an important source of employment and to continue applying state-of-the-art technology in our processes."
+    },
+    "vision": {
+      "title": "Vision",
+      "item-1": "To provide our national and international customers with quality products.",
+      "item-2": "To participate in a sustained and growing manner in the development of the food industry."
+    }
+  }
+}

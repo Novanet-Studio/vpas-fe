@@ -1,9 +1,9 @@
 <template>
   <div class="empresa">
     <app-hero
-      titulo="Empresa"
-      descripcion="Somos una organización del sector de alimentos especializada en el procesamiento y comercialización de pescados, mariscos, moluscos y demás especies marinas"
-      textoBoton="Más información"
+      :titulo="$t('enterprise.title')"
+      :descripcion="$t('enterprise.description')"
+      :texto-boton="$t('enterprise.btn-text')"
     />
     <section class="empresa__section">
       <div class="empresa__entry">
@@ -15,20 +15,12 @@
         </div>
 
         <div class="empresa__entry-content">
-          <h3 class="empresa__entry-title">¿Quienes somos?</h3>
+          <h3 class="empresa__entry-title">
+            {{ $t("enterprise.about.title") }}
+          </h3>
 
           <p>
-            Una empresa del sector alimentos que se especializa en el
-            procesamiento y comercialización de pescados, mariscos, moluscos y
-            demás especies marinas. Desde nuestra fundación, en el año 2011, nos
-            hemos dedicado a crecer de forma integral, para proveer los mercados
-            nacionales e internacionales con productos de calidad. Contamos con
-            cuatro plantas de procesamiento industrial en Venezuela, con más de
-            200 trabajadores, conformado por profesionales, técnicos y personal
-            especializado que labora en nuestras líneas de producción, control
-            de calidad y comercialización. Acopiamos, procesamos y
-            comercializamos nuestros productos con estrictos controles de
-            calidad, basados en principios de sustentabilidad.
+            {{ $t("enterprise.about.content") }}
           </p>
         </div>
       </div>
@@ -41,21 +33,19 @@
           />
         </div>
         <div class="empresa__entry-content">
-          <h3 class="empresa__entry-title">Misión</h3>
+          <h3 class="empresa__entry-title">
+            {{ $t("enterprise.mission.title") }}
+          </h3>
 
           <ul class="empresa__entry-list">
             <li class="empresa__entry-item">
-              Convertirnos en la empresa venezolana por excelencia en el
-              procesamiento, comercialización y exportación de recursos
-              hidrobiológicos.
+              {{ $t("enterprise.mission.item-1") }}
             </li>
             <li class="empresa__entry-item">
-              Consolidar a Grupo V.P.A.S. C.A., en nuestros mercados cautivos y
-              ampliar nuestra participación a nivel global.
+              {{ $t("enterprise.mission.item-2") }}
             </li>
             <li class="empresa__entry-item">
-              Ser una fuente importante de empleo y seguir aplicando tecnología
-              de punta en nuestros procesos.
+              {{ $t("enterprise.mission.item-3") }}
             </li>
           </ul>
         </div>
@@ -69,16 +59,16 @@
           />
         </div>
         <div class="empresa__entry-content">
-          <h3 class="empresa__entry-title">Visión</h3>
+          <h3 class="empresa__entry-title">
+            {{ $t("enterprise.vision.title") }}
+          </h3>
 
           <ul class="empresa__entry-list">
             <li class="empresa__entry-item">
-              Proveer a nuestros clientes nacionales e internacionales productos
-              de calidad.
+              {{ $t("enterprise.vision.item-1") }}
             </li>
             <li class="empresa__entry-item">
-              Participar de manera sostenida y creciente en el desarrollo de la
-              industria alimentaria.
+              {{ $t("enterprise.vision.item-2") }}
             </li>
           </ul>
         </div>
