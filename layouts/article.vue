@@ -10,9 +10,11 @@
         />
         <div class="article__wrapper">
           <slot />
-          <aside class="aside">
+          <aside class="aside" v-if="slug">
             <nuxt-link
-              v-for="(article, index) in articles"
+              v-for="(article, index) in articles.filter(
+                (art) => art.attributes.slug !== slug
+              )"
               :to="`/blog/${article.attributes.slug}`"
               :key="index"
             >
@@ -37,6 +39,8 @@
 <script lang="ts" setup>
 const articles = ref<Project.ArticlesData[]>([]);
 const graphql = useStrapiGraphQL();
+const route = useRoute();
+const slug = ref<string>("");
 
 const getExcerpt = (text: string) => text.substring(0, 160).concat("...");
 
@@ -65,7 +69,18 @@ try {
   `);
 
   articles.value = query.data.articulos.data;
+
+  slug.value = route.path.split("/").at(-1) as string;
 } catch (error: any) {
   console.log("An error occurred while fetching articles: ", error);
 }
+
+watch(
+  () => route.path,
+  () => {
+    if (!route.path.split("/")?.at(-1)) return;
+
+    slug.value = route.path.split("/").at(-1) as string;
+  }
+);
 </script>

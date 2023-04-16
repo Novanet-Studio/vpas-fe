@@ -6,7 +6,10 @@
       class="article__image"
     />
     <h2 class="article__title">{{ article?.attributes.titulo }}</h2>
-    <div class="article__description" v-html="markdown.render(article?.attributes.descripcion)"></div>
+    <div
+      class="article__description"
+      v-html="markdown.render(article?.attributes.descripcion ?? '')"
+    ></div>
   </div>
 </template>
 <script lang="ts" setup>

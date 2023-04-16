@@ -12,7 +12,7 @@
       <div class="blog__cards-wrapper">
         <nuxt-link
           :to="`/blog/${article.attributes.slug}`"
-          v-for="(article, index) in articles"
+          v-for="(article, index) in articles.slice(1)"
           :key="index"
         >
           <app-card
@@ -24,17 +24,12 @@
             :key="index"
           />
         </nuxt-link>
-        {{ clog(articles) }}
       </div>
     </section>
   </div>
 </template>
 
 <script lang="ts" setup>
-const clog = (e: any) => {
-  console.log(e);
-};
-
 const articles = ref<Project.ArticlesData[]>([]);
 const graphql = useStrapiGraphQL();
 
