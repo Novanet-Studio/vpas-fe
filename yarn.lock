@@ -2455,6 +2455,11 @@ git-url-parse@^13.1.0:
   dependencies:
     git-up "^7.0.0"
 
+gitart-vue-dialog@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/gitart-vue-dialog/-/gitart-vue-dialog-3.0.2.tgz#6850091c2470889ba214361509a26ba615f04582"
+  integrity sha512-asC5bwz6w9GKKNPkIHQfDKyDCvWAaS9tdm535poGv8Yr1MHlT+Kq+kds5CJtFfc3dLwtb9vsBo1uHvdZ97psPA==
+
 github-from-package@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/github-from-package/-/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
