@@ -35,7 +35,7 @@
           </accordion-item>
         </accordion-list>
       </aside>
-      <section class="product__main">
+      <section class="product__main" v-if="selected?.attributes.nombre_especie">
         <h3 class="product__title">
           {{ selected?.attributes.nombre_especie }}
         </h3>
@@ -82,6 +82,15 @@
             </div>
           </div>
         </div>
+      </section>
+      <section class="product__main" v-else>
+        <h3 class="product__title">Selecciona una especie</h3>
+        <nuxt-picture
+          src="../images/vpas-superficie-oceano-burbujas.webp"
+          alt="Imagen de carga inicial"
+          class="product__main-image"
+        />
+        <app-separator class="product__separator" />
       </section>
     </div>
   </div>
@@ -156,8 +165,8 @@ try {
   `);
 
   categories.value = query.data.categorias.data;
-  selected.value = query.data.categorias.data[1].attributes.productos.data[0];
-  subEspecie.value = selected.value.attributes.subespecie[0];
+  // selected.value = query.data.categorias.data[1].attributes.productos.data[0];
+  // subEspecie.value = selected.value.attributes.subespecie[0];
 } catch (error) {
   console.log("An error occurred while fetching categories: ", error);
 }
