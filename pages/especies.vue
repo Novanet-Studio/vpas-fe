@@ -40,31 +40,48 @@
           v-for="(item, index) in selected?.attributes.productos.data"
           :key="index"
         >
-          <app-card
-            :title="sub.nombre_subespecie"
-            :image="sub.imagen.data.attributes.url"
-            :image-alt="sub.imagen.data.attributes.alternativeText"
+          <div
             v-for="(sub, i) in item.attributes.subespecie"
-          />
+            @click="handleSelect(sub, item)"
+            class="cursor-pointer"
+          >
+            <app-card
+              :title="sub.nombre_subespecie"
+              :image="sub.imagen.data.attributes.url"
+              :image-alt="sub.imagen.data.attributes.alternativeText"
+              :key="i"
+            />
+          </div>
         </template>
       </div>
     </section>
+    <product-modal v-model="showModal" :sub-especie="subEspecie" />
   </div>
 </template>
 
 <script lang="ts" setup>
 const categories = ref<Project.CategoriesData[]>([]);
 const selected = ref<Project.CategoriesData>();
+const subEspecie = ref<Project.SubEspecie>();
 const graphql = useStrapiGraphQL();
+
+const showModal = ref<boolean>(false);
 
 function handleSelectCategory(category: Project.CategoriesData) {
   selected.value = category;
 }
 
+function handleSelect(sub: any, prod: any) {
+  console.log("clicking: ", sub);
+  console.log("prod: ", prod);
+  subEspecie.value = sub;
+  showModal.value = true;
+}
+
 try {
   const query = await graphql<Project.CategoriesRequest>(`
     query {
-      categorias(sort: "id:asc")  {
+      categorias(sort: "id:asc") {
         data {
           attributes {
             nombre
@@ -83,6 +100,9 @@ try {
                   subespecie {
                     nombre_subespecie
                     nombre_tecnico
+                    es_comerciable
+                    en_venta
+                    nota
                     imagen {
                       data {
                         attributes {
