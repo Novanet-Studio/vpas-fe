@@ -80,6 +80,9 @@ declare namespace Project {
 
   interface ProductAttributes {
     nombre_especie: string;
+    es_comerciable: boolean | null;
+    en_venta: boolean | null;
+    nota: string | null;
     subespecie: SubEspecie[];
   }
 

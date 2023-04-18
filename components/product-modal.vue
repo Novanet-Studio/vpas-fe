@@ -1,64 +1,62 @@
 <template>
-  <section class="product__main">
-    <h3 class="product__title">
-      {{ especie?.attributes.nombre_especie }}
-    </h3>
-    <div class="product__actions">
+  <app-modal v-model="showModal">
+    <div class="relative">
       <button
-        class="product__btn"
-        :class="[
-          subEspecieSelected?.nombre_subespecie ===
-            subespecie.nombre_subespecie && 'product__btn--active',
-        ]"
-        v-for="(subespecie, index) in especie?.attributes.subespecie"
-        @click="handleClick(subespecie)"
-        :key="index"
+        class="text-2xl absolute right-4 top-0"
+        @click="showModal = false"
       >
-        {{ subespecie.nombre_subespecie }}
+        &times;
       </button>
-    </div>
-    <nuxt-picture
-      :src="subEspecieSelected?.imagen.data.attributes.url"
-      :alt="subEspecieSelected?.imagen.data.attributes.alternativeText"
-      class="product__main-image"
-    />
-    <app-separator class="product__separator" />
-    <div class="product-info">
-      <div class="product-info__name-wrapper">
-        <h5 class="product-info__title">Nombre técnico</h5>
-        <p class="product-info__content">
-          {{ subEspecieSelected?.nombre_tecnico }}
-        </p>
-      </div>
-      <h5 class="product-info__title">Presentación</h5>
-      <div class="product-info__presentation">
-        <div
-          class="product-card"
-          v-for="(presentation, index) in subEspecieSelected?.presentacion.data"
-          :key="index"
-        >
-          <nuxt-img
-            v-if="presentation?.attributes"
-            class="product-card__image"
-            :src="presentation.attributes.url"
-            :alt="presentation.attributes.alternativeText"
-          />
+      <section class="product__main px-8 pb-8">
+        <nuxt-picture
+          :src="subEspecie?.imagen.data.attributes.url"
+          :alt="subEspecie?.imagen.data.attributes.alternativeText"
+          class="product__main-image"
+        />
+        <app-separator class="product__separator" />
+        <div class="product-info">
+          <div class="product-info__name-wrapper">
+            <h5 class="product-info__title">Nombre técnico</h5>
+            <p class="product-info__content">
+              {{ subEspecie?.nombre_tecnico }}
+            </p>
+          </div>
+          <h5 class="product-info__title">Presentación</h5>
+          <div class="product-info__presentation">
+            <div
+              class="product-card"
+              v-for="(presentation, index) in subEspecie?.presentacion.data"
+              :key="index"
+            >
+              <nuxt-img
+                v-if="presentation?.attributes"
+                class="product-card__image"
+                :src="presentation.attributes.url"
+                :alt="presentation.attributes.alternativeText"
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </app-modal>
 </template>
 
 <script lang="ts" setup>
 interface Props {
-  especie: Project.ProductsData;
-  subEspecie: Project.SubEspecie;
+  modelValue: boolean;
+  subEspecie: Project.SubEspecie | undefined;
+}
+
+interface Emit {
+  (e: "update:modelValue", value: boolean): void;
 }
 
 const props = defineProps<Props>();
-const subEspecieSelected = ref<Project.SubEspecie>(props.subEspecie);
+const emit = defineEmits<Emit>();
 
-function handleClick(subspecie: Project.SubEspecie) {
-  subEspecieSelected.value = subspecie;
-}
+const showModal = computed({
+  get: () => props.modelValue,
+  set: (val: boolean) => emit("update:modelValue", val),
+});
 </script>
