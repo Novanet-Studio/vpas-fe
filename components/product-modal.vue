@@ -36,7 +36,7 @@
           >
           <p v-if="subEspecie?.nota" class="rounded-xl text-xs p-2 text-black">
             <font-awesome-icon :icon="['fas', 'thumbtack']" class="mr-2" />
-            Prohibido por la temporada
+            {{ subEspecie?.nota }}
           </p>
         </div>
         <app-separator class="product__separator" />

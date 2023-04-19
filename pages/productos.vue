@@ -58,6 +58,32 @@
           :alt="subEspecie?.imagen.data.attributes.alternativeText"
           class="product__main-image"
         />
+        <div class="pt-4 flex gap-4 justify-center">
+          <span
+            class="rounded-xl text-xs p-2"
+            :class="
+              subEspecie?.es_comerciable
+                ? 'bg-platinum text-black'
+                : 'bg-bdazzled text-white'
+            "
+            >{{
+              subEspecie?.es_comerciable ? "Comerciable" : "No comerciable"
+            }}</span
+          >
+          <span
+            class="rounded-xl text-xs p-2"
+            :class="
+              subEspecie?.es_comerciable
+                ? 'bg-platinum text-black'
+                : 'bg-bdazzled text-white'
+            "
+            >{{ subEspecie?.en_venta ? "En venta" : "No disponible" }}</span
+          >
+          <p v-if="subEspecie?.nota" class="rounded-xl text-xs p-2 text-black">
+            <font-awesome-icon :icon="['fas', 'thumbtack']" class="mr-2" />
+            {{ subEspecie?.nota }}
+          </p>
+        </div>
         <app-separator class="product__separator" />
         <div class="product-info">
           <div class="product-info__name-wrapper">
@@ -138,6 +164,9 @@ try {
                   subespecie {
                     nombre_subespecie
                     nombre_tecnico
+                    es_comerciable
+                    en_venta
+                    nota
                     imagen {
                       data {
                         attributes {
