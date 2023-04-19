@@ -97,12 +97,12 @@ try {
               data {
                 attributes {
                   nombre_especie
-                  es_comerciable
-                  en_venta
-                  nota
                   subespecie {
                     nombre_subespecie
                     nombre_tecnico
+                    es_comerciable
+                    en_venta
+                    nota
                     imagen {
                       data {
                         attributes {

@@ -80,9 +80,6 @@ declare namespace Project {
 
   interface ProductAttributes {
     nombre_especie: string;
-    es_comerciable: boolean | null;
-    en_venta: boolean | null;
-    nota: string | null;
     subespecie: SubEspecie[];
   }
 
@@ -109,6 +106,9 @@ declare namespace Project {
     nombre_tecnico: string;
     presentacion: ImageAlt;
     imagen: Image;
+    es_comerciable: boolean | null;
+    en_venta: boolean | null;
+    nota: string | null;
   }
 
   // Others
