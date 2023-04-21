@@ -5,10 +5,7 @@
       <p class="app__hero-description">
         {{ descripcion }}
       </p>
-    </div>
-    <div class="app__hero-action">
-      <button class="btn">{{ textoBoton }}</button>
-    </div>
+    </div>    
     <app-div class="app-div" inverted />
   </div>
 </template>
@@ -17,7 +14,7 @@
 type Props = {
   titulo: string;
   descripcion: string;
-  textoBoton: string;
+
 };
 
 defineProps<Props>();

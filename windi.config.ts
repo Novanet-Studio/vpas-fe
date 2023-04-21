@@ -20,6 +20,9 @@ export default defineConfig({
         cerulean: "#789BBA",
         battleship: "#767676",
         platinum: "#E5E5E5",
+        selyellow: "#FFB30F",
+        jade: "#0EAD69",
+        vermillon: "#F24236"
       },
       textColor: {
         silver: "#C0C0C0",

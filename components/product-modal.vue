@@ -1,48 +1,48 @@
 <template>
   <app-modal v-model="showModal">
-    <div class="relative">
-      <button
-        class="text-2xl absolute right-4 top-0"
-        @click="showModal = false"
-      >
+    <div class="modal">
+      <button class="modal__button-close" @click="showModal = false">
         &times;
       </button>
-      <section class="product__main px-8 pb-8">
+      <section class="product__main">
         <nuxt-picture
           :src="subEspecie?.imagen.data.attributes.url"
           :alt="subEspecie?.imagen.data.attributes.alternativeText"
           class="product__main-image"
         />
-        <div class="pt-4 flex gap-4 justify-center">
+        <div class="product__tags">
           <span
-            class="rounded-xl text-xs p-2"
             :class="
               subEspecie?.es_comerciable
-                ? 'bg-platinum text-black'
-                : 'bg-bdazzled text-white'
+                ? 'border-1 border-jade text-jade'
+                : 'border-1 border-vermillon text-vermillon'
             "
             >{{
-              subEspecie?.es_comerciable ? "Comerciable" : "No comerciable"
+              subEspecie?.es_comerciable
+                ? "Disponible para comercializar"
+                : "No disponible para comercializar"
             }}</span
           >
+
           <span
-            class="rounded-xl text-xs p-2"
             :class="
               subEspecie?.es_comerciable
-                ? 'bg-platinum text-black'
-                : 'bg-bdazzled text-white'
+                ? 'border-1 border-jade text-jade'
+                : 'border-1 border-selyellow text-selyellow'
             "
-            >{{ subEspecie?.en_venta ? "En venta" : "No disponible" }}</span
+            >{{
+              subEspecie?.en_venta ? "En venta" : "No disponible para la venta"
+            }}</span
           >
-          <p v-if="subEspecie?.nota" class="rounded-xl text-xs p-2 text-black">
-            <font-awesome-icon :icon="['fas', 'thumbtack']" class="mr-2" />
+          <p v-if="subEspecie?.nota">
+            <font-awesome-icon :icon="['fas', 'thumbtack']" />
             {{ subEspecie?.nota }}
           </p>
         </div>
         <app-separator class="product__separator" />
         <div class="product-info">
           <div class="product-info__name-wrapper">
-            <h5 class="product-info__title">Nombre técnico</h5>
+            <h5 class="product-info__title">Nombre ciéntifico</h5>
             <p class="product-info__content">
               {{ subEspecie?.nombre_tecnico }}
             </p>
@@ -86,3 +86,29 @@ const showModal = computed({
   set: (val: boolean) => emit("update:modelValue", val),
 });
 </script>
+
+<style scoped>
+.modal {
+  @apply relative rounded-xl;
+}
+
+.modal__button-close {
+  @apply text-2xl absolute right-4 top-0;
+}
+
+.product__main {
+  @apply px-12 pb-8;
+}
+
+.product__tags {
+  @apply flex gap-4 justify-center pt-4 pb-2;
+}
+
+.product__tags span {
+  @apply rounded-xl text-xs p-3;
+}
+
+.product__tags p {
+  @apply rounded-xl border-1 text-xs text-battleship border-battleship pt-3 px-3;
+}
+</style>

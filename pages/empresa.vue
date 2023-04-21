@@ -3,7 +3,7 @@
     <app-hero
       :titulo="$t('enterprise.title')"
       :descripcion="$t('enterprise.description')"
-      :texto-boton="$t('enterprise.btn-text')"
+  
     />
     <section class="empresa__section">
       <div class="empresa__entry">

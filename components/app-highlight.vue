@@ -11,7 +11,15 @@
         <p class="app-highlight__description">
           {{ descripcion }}
         </p>
-        <button class="btn btn--small">{{ textoBoton }}</button>
+        <button
+          @click.prevent="$emit('clickButton')"
+          @click="clickButton(url)"
+          v-if="textoBoton"
+          class="btn btn--small"
+          :type="type"
+        >
+          {{ textoBoton }}
+        </button>
       </div>
       <app-div class="app-div" inverted />
     </div>
@@ -22,9 +30,27 @@
 type Props = {
   titulo: string;
   descripcion: string;
-  textoBoton: string;
+  textoBoton?: string;
+  url?: string;
   imagen: string;
+  type?: "button" | "reset" | "submit";
 };
 
-defineProps<Props>();
+type Emits = {
+  (e: "click"): string;
+};
+
+withDefaults(defineProps<Props>(), {
+  type: "button",
+});
+
+defineEmits<Emits>();
+
+const router = useRouter();
+
+const clickButton = (url) => {
+  router.push({
+    path: `${url}`,
+  });
+};
 </script>

@@ -15,8 +15,8 @@
      fill="#e5e5e5"
      id="path2" />
   <path
-     d="M 599,1 0,1.00005"
+     d="M 599,0.49999375 0,0.50000625"
      stroke="#e5e5e5"
-     stroke-width="2"
+     stroke-width="0.999987"
      id="path4" />
 </svg>

@@ -3,8 +3,9 @@
     <app-highlight
       :titulo="articles[0]?.attributes.titulo"
       :descripcion="getExcerpt(articles[0]?.attributes.descripcion)"
-      textoBoton="Más información"
+      textoBoton="Ver artículo"
       :imagen="articles[0]?.attributes.imagen.data.attributes.url"
+      :url="`/blog/${articles[0]?.attributes.slug}`"
     />
 
     <h3 class="noticias__titulo">Noticias</h3>

@@ -132,12 +132,12 @@
 
 .header__container {
   @apply container mx-auto   
-  md:(flex justify-between px-8 py-8)
+  md:(flex justify-between px-8 py-8);
 }
 
 .header__logo {
   /* @apply w-2/5; */
-  @apply <sm:( flex justify-between ml-4 py-4)
+  @apply <sm:( flex justify-between ml-4 py-4);
 }
 
 .header__logo-image {
@@ -308,15 +308,15 @@
 }
 
 .app__hero-content {
-  @apply md:(w-2/3);
+  @apply md:(w-full);
 }
 
 .app__hero-title {
-  @apply heading-2 text-white mb-2;
+  @apply heading-2 text-white text-center mb-2;
 }
 
 .app__hero-description {
-  @apply text-white text-xl hyphens-none;
+  @apply text-white text-3xl text-center hyphens-none;
 }
 
 .app__hero-action {
@@ -333,7 +333,7 @@
 }
 
 .app-highlight__description {
-  @apply md:(hidden)
+  @apply md:(hidden);
 }
 
 .app-highlight__wrapper {
@@ -356,7 +356,7 @@
 }
 
 .app-highlight__title {
-  @apply w-full heading-2 text-white border-t-1 border-t-platinum pt-4
+  @apply w-full heading-1 text-white border-t-1 border-t-platinum pt-4
   <sm:(border-none);
 }
 
@@ -730,16 +730,21 @@
   @apply text-lg text-bdazzled mt-4 font-semibold border-b border-b-silver w-full pb-2;
 }
 
-/* Product Aside */
-.p-aside {
+.product__aside {
   @apply flex-basis-[20%]
   @md:(flex-basis-[30%]);
+}
+
+.product__aside-title {
+  @apply mb-4
+  <sm:(heading-4)
+  md:(heading-3);
 }
 
 /* Especies en Venezuela */
 
 .especies {
-  @apply
+  @apply;
 }
 
 .especies__info {
@@ -750,8 +755,7 @@
 }
 
 .especies__info > .especies__description {
-  @apply 
-  md:(flex-basis-[75%] text-gunmetal text-lg);
+  @apply md:(flex-basis-[75%] text-gunmetal text-lg);
 }
 
 .especies__info > .btn {
@@ -790,8 +794,7 @@
 
 /* Blog */
 .blog__content {
-  @apply container mx-auto
-  ;
+  @apply container mx-auto;
 }
 
 .article__wrapper {
@@ -812,7 +815,8 @@
 }
 
 .article__image {
-  @apply mt-12 rounded-tl-[20px] rounded-br-[15px] md:mt-0;
+  @apply mt-12 rounded-tl-[20px] rounded-br-[15px] 
+  md:mt-0;
 }
 
 .article__title {
@@ -820,7 +824,5 @@
 }
 
 .article__description {
-  @apply text-xl
+  @apply text-xl;
 }
-
-
