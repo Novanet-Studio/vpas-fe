@@ -12,7 +12,6 @@
         tenetur architecto explicabo odit dolores, impedit nihil accusamus
         consectetur repellat praesentium!
       </p>
-      <button class="btn btn--bdazzled">Más información</button>
     </section>
     <section class="especies__content">
       <div class="especies__content-header">
