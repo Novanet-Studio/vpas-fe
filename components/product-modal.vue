@@ -46,22 +46,7 @@
             <p class="product-info__content">
               {{ subEspecie?.nombre_tecnico }}
             </p>
-          </div>
-          <h5 class="product-info__title">Presentación</h5>
-          <div class="product-info__presentation">
-            <div
-              class="product-card"
-              v-for="(presentation, index) in subEspecie?.presentacion.data"
-              :key="index"
-            >
-              <nuxt-img
-                v-if="presentation?.attributes"
-                class="product-card__image"
-                :src="presentation.attributes.url"
-                :alt="presentation.attributes.alternativeText"
-              />
-            </div>
-          </div>
+          </div>          
         </div>
       </section>
     </div>

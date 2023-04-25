@@ -4,7 +4,7 @@
       titulo="Especies en Venezuela"
       descripcion="Lorem ipsum dolor sit amet consectetur."
       imagen="https://res.cloudinary.com/novanet-studio/image/upload/v1682094938/vpas/uploads/vpas_especies_venezuela_peces_nadando_cerca_coral_d681fb7a4c.webp"
-      />
+    />
     <section class="especies__info">
       <p class="especies__description">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
@@ -102,14 +102,6 @@ try {
                     en_venta
                     nota
                     imagen {
-                      data {
-                        attributes {
-                          url
-                          alternativeText
-                        }
-                      }
-                    }
-                    presentacion {
                       data {
                         attributes {
                           url
