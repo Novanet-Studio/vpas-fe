@@ -42,6 +42,12 @@
         <app-separator class="product__separator" />
         <div class="product-info">
           <div class="product-info__name-wrapper">
+            <h5 class="product-info__title">Nombre en inglés</h5>
+            <p class="product-info__content">
+              {{ subEspecie?.nombre_ingles }}
+            </p>
+          </div>
+          <div class="product-info__name-wrapper">
             <h5 class="product-info__title">Nombre ciéntifico</h5>
             <p class="product-info__content">
               {{ subEspecie?.nombre_tecnico }}
