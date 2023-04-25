@@ -5,8 +5,8 @@
       descripcion="Expanda el acordeón para ver las especies que tenemos disponibles para la venta."
     />
 
-    <div class="product__content">      
-      <aside class="product__aside">        
+    <div class="product__content">
+      <aside class="product__aside">
         <accordion-list v-for="(category, index) in categories" :key="index">
           <accordion-item>
             <template #summary>{{ category.attributes.nombre }}</template>
@@ -60,6 +60,13 @@
         <app-separator class="product__separator" />
         <div class="product-info">
           <div class="product-info__name-wrapper">
+            <h5 class="product-info__title">Nombre en inglés</h5>
+            <p class="product-info__content">
+              {{ subEspecie?.nombre_ingles }}
+            </p>
+          </div>
+
+          <div class="product-info__name-wrapper">
             <h5 class="product-info__title">Nombre ciéntifico</h5>
             <p class="product-info__content">
               {{ subEspecie?.nombre_tecnico }}
@@ -82,7 +89,7 @@
           </div>
         </div>
       </section>
-      <section class="product__main" v-else>      
+      <section class="product__main" v-else>
         <nuxt-picture
           src="https://res.cloudinary.com/novanet-studio/image/upload/v1682090118/vpas/uploads/vpas_productos_lanchas_pesca_senital_0d7fe70da1.webp"
           alt="Imagen de carga inicial"
@@ -135,6 +142,7 @@ try {
                   nombre_especie
                   subespecie {
                     nombre_subespecie
+                    nombre_ingles
                     nombre_tecnico
                     imagen {
                       data {
@@ -176,19 +184,28 @@ try {
 }
 
 :global(
-    .product__aside > div:nth-child(1) > details:nth-child(1) > summary:nth-child(1)
+    .product__aside
+      > div:nth-child(1)
+      > details:nth-child(1)
+      > summary:nth-child(1)
   ) {
   @apply bg-gunmetal summary-text;
 }
 
 :global(
-    .product__aside > div:nth-child(2) > details:nth-child(1) > summary:nth-child(1)
+    .product__aside
+      > div:nth-child(2)
+      > details:nth-child(1)
+      > summary:nth-child(1)
   ) {
   @apply bg-bdazzled summary-text;
 }
 
 :global(
-    .product__aside > div:nth-child(3) > details:nth-child(1) > summary:nth-child(1)
+    .product__aside
+      > div:nth-child(3)
+      > details:nth-child(1)
+      > summary:nth-child(1)
   ) {
   @apply bg-cerulean summary-text;
 }

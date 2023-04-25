@@ -97,6 +97,7 @@ try {
                   nombre_especie
                   subespecie {
                     nombre_subespecie
+                    nombre_ingles
                     nombre_tecnico
                     es_comerciable
                     en_venta
