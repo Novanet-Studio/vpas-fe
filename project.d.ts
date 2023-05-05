@@ -106,9 +106,9 @@ declare namespace Project {
     nombre_tecnico: string;
     presentacion: ImageAlt;
     imagen: Image;
-    es_comerciable: boolean | null;
-    en_venta: boolean | null;
-    nota: string | null;
+    mercado_nacional: boolean | null;
+    mercado_exportacion: boolean | null;
+    exportable: boolean | null;
   }
 
   // Others

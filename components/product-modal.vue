@@ -13,31 +13,42 @@
         <div class="product__tags">
           <span
             :class="
-              subEspecie?.es_comerciable
+              subEspecie?.mercado_nacional
                 ? 'border-1 border-jade text-jade'
                 : 'border-1 border-vermillon text-vermillon'
             "
             >{{
-              subEspecie?.es_comerciable
-                ? "Disponible para comercializar"
-                : "No disponible para comercializar"
+              subEspecie?.mercado_nacional
+                ? "Disponible en el mercado nacional"
+                : "No disponible en el mercado nacional"
             }}</span
           >
 
           <span
             :class="
-              subEspecie?.es_comerciable
+              subEspecie?.mercado_exportacion
                 ? 'border-1 border-jade text-jade'
                 : 'border-1 border-selyellow text-selyellow'
             "
             >{{
-              subEspecie?.en_venta ? "En venta" : "No disponible para la venta"
+              subEspecie?.mercado_exportacion
+                ? "Disponible en el mercado de exportación"
+                : "No disponible en el mercado de exportación"
             }}</span
           >
-          <p v-if="subEspecie?.nota">
-            <font-awesome-icon :icon="['fas', 'thumbtack']" />
-            {{ subEspecie?.nota }}
-          </p>
+
+          <span
+            :class="
+              subEspecie?.exportable
+                ? 'border-1 border-jade text-jade'
+                : 'border-1 border-vermillon text-vermillon'
+            "
+            >{{
+              subEspecie?.exportable
+                ? "Disponible para la exportación"
+                : "No disponible para la exportación"
+            }}</span
+          >
         </div>
         <app-separator class="product__separator" />
         <div class="product-info">
@@ -52,7 +63,7 @@
             <p class="product-info__content">
               {{ subEspecie?.nombre_tecnico }}
             </p>
-          </div>          
+          </div>
         </div>
       </section>
     </div>

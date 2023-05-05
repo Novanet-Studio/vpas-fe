@@ -99,9 +99,9 @@ try {
                     nombre_subespecie
                     nombre_ingles
                     nombre_tecnico
-                    es_comerciable
-                    en_venta
-                    nota
+                    mercado_nacional
+                    mercado_exportacion
+                    exportable
                     imagen {
                       data {
                         attributes {
