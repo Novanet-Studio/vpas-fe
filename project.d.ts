@@ -63,6 +63,7 @@ declare namespace Project {
   }
 
   interface CategoriesData {
+    id: string;
     attributes: CategoryAttributes;
   }
 
