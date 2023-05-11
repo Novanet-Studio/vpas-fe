@@ -20,8 +20,8 @@
             "
             >{{
               subEspecie?.mercado_nacional
-                ? "Disponible en el mercado nacional"
-                : "No disponible en el mercado nacional"
+                ? "Actualmente se comercializa en el mercado nacional"
+                : "Actualmente no se comercializa en el mercado nacional"
             }}</span
           >
 
@@ -33,8 +33,8 @@
             "
             >{{
               subEspecie?.mercado_exportacion
-                ? "Disponible en el mercado de exportación"
-                : "No disponible en el mercado de exportación"
+                ? "Actualmente se comercializa en el mercado internacional"
+                : "Actualmente no se comercializa en el mercado internacional"
             }}</span
           >
 
@@ -46,8 +46,8 @@
             "
             >{{
               subEspecie?.exportable
-                ? "Disponible para la exportación"
-                : "No disponible para la exportación"
+                ? "Permitido para la exportación"
+                : "No permitido para la exportación"
             }}</span
           >
         </div>
