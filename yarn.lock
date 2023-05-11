@@ -3542,7 +3542,7 @@ nuxi@3.4.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-windicss@^2.6.0:
+nuxt-windicss@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/nuxt-windicss/-/nuxt-windicss-2.6.1.tgz#b1e3c4c1002f9464d3c2d30ba054c96ce9463f8a"
   integrity sha512-tm1i5Vdpa0ie5+d+eiHxuYq2tkVBJ8Y5zMLLt6LA+Eq+FhSsnv+cW9NhzAPwkZZy5DISdwVKUUw8HmNEf2Uv5Q==

@@ -44,7 +44,7 @@ export default defineNuxtConfig({
       "@fortawesome/free-solid-svg-icons",
       "@fortawesome/free-brands-svg-icons",
     ],
-  },
+  }, 
 
   modules: [
     "@nuxt/image-edge",

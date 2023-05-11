@@ -26,7 +26,18 @@
                     class="fish-item"
                     @click="handleSelectSubEspecie(product, subespecie)"
                   >
-                    {{ subespecie.nombre_subespecie }}
+                    <nuxt-link
+                      :to="{
+                        path: '/productos',
+                        hash: '#product-active',
+                      }"
+                      :class="[
+                        subEspecie?.nombre_subespecie ===
+                          subespecie.nombre_subespecie && 'fish-item--active',
+                      ]"
+                    >
+                      {{ subespecie.nombre_subespecie }}
+                    </nuxt-link>
                   </li>
                 </ul>
               </accordion-item>
@@ -35,67 +46,71 @@
         </accordion-list>
       </aside>
       <section class="product__main" v-if="selected?.attributes.nombre_especie">
-        <h3 class="product__title">
-          {{ selected?.attributes.nombre_especie }}
-        </h3>
-        <div class="product__actions">
-          <button
-            class="product__btn"
-            :class="[
-              subEspecie?.nombre_subespecie === subespecie.nombre_subespecie &&
-                'product__btn--active',
-            ]"
-            v-for="(subespecie, index) in selected?.attributes.subespecie"
-            @click="handleClick(subespecie)"
-            :key="index"
-          >
-            {{ subespecie.nombre_subespecie }}
-          </button>
-        </div>
-        <nuxt-picture
-          :src="subEspecie?.imagen.data.attributes.url"
-          :alt="subEspecie?.imagen.data.attributes.alternativeText"
-          class="product__main-image"
-        />
-        <app-separator class="product__separator" />
-        <div class="product-info">
-          <div class="product-info__name-wrapper">
-            <h5 class="product-info__title">Nombre en inglés</h5>
-            <p class="product-info__content">
-              {{ subEspecie?.nombre_ingles }}
-            </p>
-          </div>
-
-          <div class="product-info__name-wrapper">
-            <h5 class="product-info__title">Nombre ciéntifico</h5>
-            <p class="product-info__content">
-              {{ subEspecie?.nombre_tecnico }}
-            </p>
-          </div>
-          <h5 class="product-info__title">Presentación</h5>
-          <div class="product-info__presentation">
-            <div
-              class="product-card"
-              v-for="(presentation, index) in subEspecie?.presentacion.data"
+        <div id="product-active" class="product__wrapper">
+          <h3 class="product__title">
+            {{ selected?.attributes.nombre_especie }}
+          </h3>
+          <div class="product__actions">
+            <button
+              class="product__btn"
+              :class="[
+                subEspecie?.nombre_subespecie ===
+                  subespecie.nombre_subespecie && 'product__btn--active',
+              ]"
+              v-for="(subespecie, index) in selected?.attributes.subespecie"
+              @click="handleClick(subespecie)"
               :key="index"
             >
-              <nuxt-img
-                v-if="presentation?.attributes"
-                class="product-card__image"
-                :src="presentation.attributes.url"
-                :alt="presentation.attributes.alternativeText"
-              />
+              {{ subespecie.nombre_subespecie }}
+            </button>
+          </div>
+          <nuxt-picture
+            :src="subEspecie?.imagen.data.attributes.url"
+            :alt="subEspecie?.imagen.data.attributes.alternativeText"
+            class="product__main-image"
+          />
+          <app-separator class="product__separator" />
+          <div class="product-info">
+            <div class="product-info__name-wrapper">
+              <h5 class="product-info__title">Nombre en inglés</h5>
+              <p class="product-info__content">
+                {{ subEspecie?.nombre_ingles }}
+              </p>
+            </div>
+
+            <div class="product-info__name-wrapper">
+              <h5 class="product-info__title">Nombre ciéntifico</h5>
+              <p class="product-info__content">
+                {{ subEspecie?.nombre_tecnico }}
+              </p>
+            </div>
+            <h5 class="product-info__title">Presentación</h5>
+            <div class="product-info__presentation">
+              <div
+                class="product-card"
+                v-for="(presentation, index) in subEspecie?.presentacion.data"
+                :key="index"
+              >
+                <nuxt-img
+                  v-if="presentation?.attributes"
+                  class="product-card__image"
+                  :src="presentation.attributes.url"
+                  :alt="presentation.attributes.alternativeText"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section class="product__main" v-else>
-        <nuxt-picture
-          src="https://res.cloudinary.com/novanet-studio/image/upload/v1682090118/vpas/uploads/vpas_productos_lanchas_pesca_senital_0d7fe70da1.webp"
-          alt="Imagen de carga inicial"
-          class="product__main-image"
-        />
-        <app-separator class="product__separator" />
+        <div id="product-active" class="product__wrapper">
+          <nuxt-picture
+            src="https://res.cloudinary.com/novanet-studio/image/upload/v1682090118/vpas/uploads/vpas_productos_lanchas_pesca_senital_0d7fe70da1.webp"
+            alt="Imagen de carga inicial"
+            class="product__main-image"
+          />
+          <app-separator class="product__separator" />
+        </div>
       </section>
     </div>
   </div>
@@ -128,15 +143,7 @@ try {
         data {
           attributes {
             nombre
-            imagen {
-              data {
-                attributes {
-                  url
-                  alternativeText
-                }
-              }
-            }
-            productos {
+            productos(sort: "nombre_especie:asc") {
               data {
                 attributes {
                   nombre_especie
@@ -245,5 +252,13 @@ try {
 
 .fish-item {
   @apply cursor-pointer border-b border-b-silver text-sm py-2 hyphens-none;
+}
+
+.fish-item--active {
+  @apply font-bold !important;
+}
+
+.fish-item a {
+  @apply font-normal;
 }
 </style>

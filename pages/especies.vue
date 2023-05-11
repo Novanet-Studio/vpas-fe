@@ -7,10 +7,7 @@
     />
     <section class="especies__info">
       <p class="especies__description">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
-        accusantium amet voluptas quisquam totam fuga quod eaque omnis ipsum
-        tenetur architecto explicabo odit dolores, impedit nihil accusamus
-        consectetur repellat praesentium!
+        Aquí encontraras algunas especies de mar, especies de agua dulce y mariscos que existen en Venezuela. También podras saber si están actualmente comercializadas en nuestro mercado nacional, si son parte del mercado de exportación o si podrían ser exportadas. Si tienes alguna duda o comentario, puedes contactarnos a través de nuestro correo electronico o <nuxt-link to="/contacto"><b>formulario de contacto.</b></nuxt-link> 
       </p>
     </section>
     <section class="especies__content">
@@ -82,16 +79,8 @@ try {
       categorias(sort: "id:asc") {
         data {
           attributes {
-            nombre
-            imagen {
-              data {
-                attributes {
-                  url
-                  alternativeText
-                }
-              }
-            }
-            productos {
+            nombre   
+            productos(sort: "nombre_especie:asc") {
               data {
                 attributes {
                   nombre_especie

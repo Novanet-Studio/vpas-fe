@@ -392,9 +392,6 @@
 
 /* --- Inicio ---  */
 
-.especies {
-  @apply;
-}
 
 .especies__info {
   @apply py-16;
@@ -595,24 +592,24 @@
 }
 
 .empresa__entry {
-  @apply flex flex-wrap
-  <xl:( mb-12);
+  @apply flex 
+  <xl:(mb-12 flex-wrap);
 }
 
 .empresa__entry-image-container {
-  @apply flex-col-center w-63 h-63 bg-empresaRoundBg bg-no-repeat 
-  <xl:(w-full bg-center)
-  xl:( bg-left-top);
+  @apply flex-col-center w-[25%] bg-empresaRoundBg bg-no-repeat bg-center bg-contain  
+  xl:(h-73)
 }
 
 .empresa__entry-image {
-  @apply w-60 h-60 rounded-full self-center;
+  @apply  rounded-full self-center  
+  xl:(w-70 h-70);
 }
 
 .empresa__entry-content {
-  @apply pl-5
+  @apply w-[75%]
   <sm:(w-full)
-  xl:(w-3/4);
+  @lg:(pl-5);
 }
 
 .empresa__entry-title {
@@ -654,17 +651,24 @@
 }
 
 .product__content {
-  @apply flex flex-col gap-10 px-6 mt-8 
+  @apply flex flex-col gap-10 px-6 mt-8   
   md:(flex-row gap-8)
   xl:(px-48);
 }
 
 .product__main {
-  @apply border-red-200 flex-basis-[60%];
+  @apply flex-basis-[60%]
+  <sm:( order-1);
+}
+
+.product__wrapper {
+  @apply sticky top-4;
+  animation: opac 0.8s;
+  position: -webkit-sticky;
 }
 
 .product__actions {
-  @apply flex gap-2;
+  @apply flex flex-wrap gap-2;
 }
 
 .product__btn {
@@ -686,8 +690,23 @@
   @apply rounded-br-lg;
 }
 
+.product__main-image {
+  @apply flex justify-center;
+}
+
 .product__main-image img {
-  @apply mt-4 <sm:(w-full) md:(max-w-full);
+  @apply mt-4 
+  <sm:(w-full min-h-51.5) md:(max-w-full min-h-98.5);
+  animation: opac 0.8s;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .product__separator {
@@ -732,6 +751,7 @@
 
 .product__aside {
   @apply flex-basis-[20%]
+  <sm:(order-2)
   @md:(flex-basis-[30%]);
 }
 

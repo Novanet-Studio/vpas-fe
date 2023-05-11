@@ -5,6 +5,7 @@
         &times;
       </button>
       <section class="product__main">
+        <h1 class="product__title">{{ subEspecie?.nombre_subespecie }}</h1>
         <nuxt-picture
           :src="subEspecie?.imagen.data.attributes.url"
           :alt="subEspecie?.imagen.data.attributes.alternativeText"
@@ -91,19 +92,27 @@ const showModal = computed({
 
 <style scoped>
 .modal {
-  @apply relative rounded-xl;
+  @apply relative ;
 }
+
 
 .modal__button-close {
   @apply text-2xl absolute right-4 top-0;
 }
 
 .product__main {
-  @apply px-12 pb-8;
+  @apply <sm:(px-6 pb-4) md:(px-8 pb-6);
 }
 
+.product__title {
+  @apply mt-8 mb-0 !important 
+}
+
+
 .product__tags {
-  @apply flex gap-4 justify-center pt-4 pb-2;
+  @apply flex flex-wrap gap-4 justify-center 
+  <sm:(justify-start)
+  md:(pt-4 pb-2);
 }
 
 .product__tags span {
