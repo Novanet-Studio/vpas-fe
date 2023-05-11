@@ -551,8 +551,7 @@
 
 .contacto__mapa {
   @apply flex flex-1 items-center justify-center
-  <sm:(mt-8) 
-  md:(-mt-18);
+  <sm:(mt-8);
 }
 
 .contacto__mapa-imagen {
