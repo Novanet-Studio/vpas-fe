@@ -105,7 +105,7 @@
       <section class="product__main" v-else>
         <div id="product-active" class="product__wrapper">
           <nuxt-picture
-            src="https://res.cloudinary.com/novanet-studio/image/upload/v1682090118/vpas/uploads/vpas_productos_lanchas_pesca_senital_0d7fe70da1.webp"
+            src="https://res.cloudinary.com/novanet-studio/image/upload/v1684169451/vpas/uploads/vpas_productos_lanchas_pesca_senital_0d7fe70da1.webp"
             alt="Imagen de carga inicial"
             class="product__main-image"
           />
