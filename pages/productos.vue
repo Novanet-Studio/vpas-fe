@@ -10,11 +10,11 @@
         <accordion-list v-for="(category, index) in categories" :key="index">
           <accordion-item>
             <template #summary>{{ category.attributes.nombre }}</template>
-            <accordion-list>
-              <accordion-item
-                v-for="(product, iter) in category.attributes.productos.data"
-                :key="iter"
-              >
+            <accordion-list
+              v-for="(product, iter) in category.attributes.productos.data"
+              :key="iter"
+            >
+              <accordion-item v-if="product.attributes.subespecie.length > 0">
                 <template #summary>{{
                   product.attributes.nombre_especie
                 }}</template>
@@ -117,6 +117,10 @@
 </template>
 
 <script lang="ts" setup>
+const clog = (e: any) => {
+  console.log(e);
+};
+
 const categories = ref<Project.CategoriesData[]>([]);
 const selected = ref<Project.ProductsData>();
 const subEspecie = ref<Project.SubEspecie>();
@@ -147,7 +151,7 @@ try {
               data {
                 attributes {
                   nombre_especie
-                  subespecie {
+                  subespecie(filters: { mercado_nacional: { eq: true } }) {
                     nombre_subespecie
                     nombre_ingles
                     nombre_tecnico

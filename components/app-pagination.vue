@@ -115,15 +115,18 @@ watch(activePage, (newVal, oldVal) => {
   --pg-item-border-radius: 50%;
   --pg-item-distance: 5px;
 }
+
 .paginator-container {
   display: flex;
   align-items: center;
   gap: var(--pg-item-distance);
 }
+
 .paginator-items {
   display: flex;
   gap: var(--pg-item-distance);
 }
+
 .paginator-item {
   display: inline-flex;
   align-items: center;
@@ -132,17 +135,27 @@ watch(activePage, (newVal, oldVal) => {
   height: var(--pg-item-height);
   border-radius: var(--pg-item-border-radius);
 }
+
 .paginator-item.active {
   background: var(--primary-color);
   color: #fff;
 }
+
+.paginator-item-prev,
+.paginator-item-next {
+  color: var(--primary-color);
+  font-weight: bolder;
+}
+
 .paginator-item:not(.active, .space):active {
   color: var(--primary-color);
 }
+
 .paginator-item:not(.disabled, .space) {
   cursor: pointer;
   opacity: 1;
 }
+
 .paginator-item.disabled {
   opacity: 0.3;
 }
