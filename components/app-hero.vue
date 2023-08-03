@@ -1,7 +1,7 @@
 <template>
   <div class="app__hero">
     <div class="app__hero-content">
-      <h2 class="app__hero-title">{{ titulo }}</h2>
+      <h1 class="app__hero-title">{{ titulo }}</h1>
       <p class="app__hero-description">
         {{ descripcion }}
       </p>

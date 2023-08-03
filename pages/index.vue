@@ -61,12 +61,14 @@
           :key="index"
         >
           <div class="noticias__item-container">
+            <nuxt-link :to="`/blog/${item.attributes.slug}`">
             <nuxt-img
               class="noticias__imagen"
               :src="item.attributes.imagen.data.attributes.url"
               :alt="item.attributes.imagen.data.attributes.alternativeText"
             />
             <h3 class="noticias__item-titulo">{{ item.attributes.titulo }}</h3>
+          </nuxt-link>
           </div>
         </li>
       </ul>

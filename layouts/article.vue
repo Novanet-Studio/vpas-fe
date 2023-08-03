@@ -5,7 +5,6 @@
       <main class="main">
         <app-hero
           titulo="Noticias de interés"
-          descripcion="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, saepe. Et debitis quam, soluta explicabo facere voluptas quasi."
           textoBoton="Más información"
         />
         <div class="article__wrapper">

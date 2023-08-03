@@ -312,7 +312,7 @@
 }
 
 .app__hero-title {
-  @apply heading-2 text-white text-center mb-2;
+  @apply heading-1 text-white text-center mb-2;
 }
 
 .app__hero-description {
@@ -834,7 +834,7 @@
 }
 
 .article__image {
-  @apply mt-12 rounded-tl-[20px] rounded-br-[15px] 
+  @apply w-full mt-12 rounded-tl-[20px] rounded-br-[15px] 
   md:mt-0;
 }
 
