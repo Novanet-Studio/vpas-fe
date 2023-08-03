@@ -77,10 +77,7 @@
       <div class="contacto__contenedor">
         <div class="contacto__informacion">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore
-            ullam est veritatis culpa, architecto, totam quisquam quibusdam
-            consequuntur hic saepe sed quam fugit suscipit facere quaerat
-            temporibus inventore, eaque officia.
+            Grupo VPAS se encuentra en Caracas y tiene operaciones también en Barcelona y Punto Fijo.
           </p>
           <div class="contacto__informacion-contenedor">
             <div class="contacto__texto">
